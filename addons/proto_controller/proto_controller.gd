@@ -83,25 +83,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			disable_freefly()
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and event.pressed:
-		# 🔹 Récupérer la zone du joystick
-		var joystick_rect = joystick_look.get_global_rect()
-		if joystick_rect.has_point(event.position):
-			return  # le touch est sur le joystick → ignorer
-
-		# Sinon faire le raycast pour interagir
-		if interact_ray.is_colliding():
-			var target = interact_ray.get_collider()
-			while target and not target.has_method("interact") and target.get_parent():
-				target = target.get_parent()
-			if target and target.has_method("interact"):
-				target.interact()
-
 func _physics_process(delta: float) -> void:
-	if interact_ray.is_colliding():
-		var collider = interact_ray.get_collider()
-		print("RayCast touche : ", collider.name)
 
 	# Rotation avec le joystick de look
 	if joystick_look and joystick_look.is_pressed:

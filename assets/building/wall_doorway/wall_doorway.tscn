@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://di2in3akjsy16"]
+[gd_scene load_steps=9 format=4 uid="uid://di2in3akjsy16"]
 
 [ext_resource type="Material" uid="uid://cu5kaojjrwhee" path="res://assets/textures/mat_dungeon.tres" id="1_5spg8"]
-[ext_resource type="Script" uid="uid://ckhtppludcnts" path="res://assets/building/wall_doorway/door_pivot.gd" id="2_kjeec"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_787ka"]
 size = Vector3(1.1, 1, 1)
@@ -102,7 +101,6 @@ skeleton = NodePath("")
 
 [node name="DoorPivot" type="Node3D" parent="wall_doorway2/wall_doorway/wall_doorway_door2"]
 transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -1.1201, 0, 0)
-script = ExtResource("2_kjeec")
 
 [node name="DoorArea" type="Area3D" parent="wall_doorway2/wall_doorway/wall_doorway_door2/DoorPivot"]
 transform = Transform3D(1, 0, -2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, 1.1201, 0, 2.67053e-07)
