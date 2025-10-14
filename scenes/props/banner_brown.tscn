@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://beindjdddirok"]
+
+[ext_resource type="PackedScene" uid="uid://deh4olt1qvfe8" path="res://models/props/banner_brown-v1.glb" id="1_fjoud"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ihgs"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="banner_brown-v1" parent="." instance=ExtResource("1_fjoud")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 3.19, 0, 0, 0, 0.4, 0, 2.2, 0.5)
+shape = SubResource("BoxShape3D_3ihgs")
