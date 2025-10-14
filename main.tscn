@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c41tm63a5tsk" path="res://scenes/buildings/ceiling.tscn" id="1_dg77c"]
 [ext_resource type="Texture2D" uid="uid://d0hev6ippx8pv" path="res://autumn_field_puresky_4k.hdr" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://drxr4vfvknshw" path="res://scenes/buildings/floor_wood.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://3gv5tgujus6p" path="res://models/building/floor_stone.glb" id="3_kek77"]
 [ext_resource type="PackedScene" uid="uid://cgy2t8kiqgvt0" path="res://scenes/buildings/wall_window_closed.tscn" id="4_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://tuglna7cawvn" path="res://scenes/buildings/wall_cracked.tscn" id="5_yaehf"]
