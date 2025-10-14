@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvo74epiuv6yr"]
+
+[ext_resource type="PackedScene" uid="uid://cvyulwsmr24a" path="res://assets/props/candles/candles.glb" id="1_wek3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6jeq"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="candles" parent="." instance=ExtResource("1_wek3q")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.56, 0, 0, 0, 0.77, 0, 0, 0, 0.5, 0.1, 0.4, 0)
+shape = SubResource("BoxShape3D_v6jeq")

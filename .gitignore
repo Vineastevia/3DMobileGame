@@ -1,15 +1,18 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
 # Godot
-.import/
-export.cfg
-export_presets.cfg
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Temporary files
+/.godot/
+/android/
+*.translation
 *.tmp
+~*
+
+# Mono
+/.mono/
+/data_*/
+mono_crash.*.json
+mono_crash.*.blob
+
+# Visual Studio
+/.vs/
+
+# Visual Studio Code
+/.vscode/

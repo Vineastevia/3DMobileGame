@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tuglna7cawvn"]
+
+[ext_resource type="PackedScene" uid="uid://c3anf2uioojo2" path="res://assets/building/wall_cracked/wall_cracked.glb" id="1_tuxy5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_whqh5"]
+
+[node name="wall_cracked" type="StaticBody3D"]
+
+[node name="wall_cracked2" parent="." instance=ExtResource("1_tuxy5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4.05, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_whqh5")
