@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfwq27cr7s2fu"]
+
+[ext_resource type="PackedScene" uid="uid://op1a8yr78kee" path="res://models/props/torch_mounted.glb" id="1_1yhlk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1yhlk"]
+
+[node name="torch_mounted" type="StaticBody3D"]
+
+[node name="torch_mounted2" parent="." instance=ExtResource("1_1yhlk")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torch_mounted2"]
+transform = Transform3D(0.999258, 0, 0.0385099, 0, 1, 0, -0.0385099, 0, 0.999258, 0, 0.7, 0.4)
+light_color = Color(0.84465, 0.340495, 0.130018, 1)
+light_energy = 2.0
+shadow_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.54, 0, 0, 0, 0.474666, -0.170708, 0, 0.172764, 0.469016, 0, 0.2, 0.2)
+shape = SubResource("CylinderShape3D_1yhlk")
