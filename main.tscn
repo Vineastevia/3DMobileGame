@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=25 format=3 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -12,8 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://dflivxfnfolb7" path="res://assets/building/wall_shelved/wall_shelved.tscn" id="10_dg77c"]
 [ext_resource type="PackedScene" uid="uid://di2in3akjsy16" path="res://assets/building/wall_doorway/wall_doorway.tscn" id="11_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://cbknpa8c2cxos" path="res://assets/building/wall_half_endcap/wall_half_endcap.tscn" id="11_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://yranf8adw2nu" path="res://assets/props/keg_decorated/keg_decorated.tscn" id="12_074og"]
 [ext_resource type="PackedScene" uid="uid://bfwq27cr7s2fu" path="res://assets/props/torch_mounted/torch_mounted.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://cfg31rowns86q" path="res://assets/creatures/blue_snake.tscn" id="13_cegan"]
+[ext_resource type="PackedScene" uid="uid://dxagff1wh7cgh" path="res://assets/props/banner_thin_yellow/banner_thin_yellow.tscn" id="13_yaehf"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://7hb1hukg74p2" path="res://assets/props/banner_thin_blue/banner_thin_blue.tscn" id="14_074og"]
+[ext_resource type="PackedScene" uid="uid://dvsgugaygufak" path="res://assets/creatures/yellow_snake.tscn" id="14_82xsv"]
 [ext_resource type="Script" uid="uid://cyuikbglr7d62" path="res://addons/virtual_joystick/virtual_joystick_look.gd" id="14_w48qg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
@@ -946,14 +951,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 7.7, -5.89001)
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3, 3.3000002)
 
+[node name="keg_decorated" parent="." instance=ExtResource("12_074og")]
+transform = Transform3D(-0.49999997, 0, 0.8660254, 0, 1.0000001, 0, -0.86602527, 0, -0.50000006, -0.746946, 0.286875, 3.015139)
+
+[node name="yellow_snake" parent="." instance=ExtResource("13_cegan")]
+transform = Transform3D(-0.12886001, 0, -0.38055465, 0, 0.34999993, 0, 0.22319204, 0, -0.21971339, 7, 0, 4.8)
+
+[node name="blue_snake" parent="." instance=ExtResource("14_82xsv")]
+transform = Transform3D(0.10260607, 0, 0.37587696, 0, 0.31500003, 0, -0.28190783, 0, 0.13680808, -1.3000002, 0, 5.1000004)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.394292, -0.323198, 0.860277, 0.218416, 0.94225, 0.253888, -0.892653, 0.0877931, 0.442112, 0, 17.2, -25)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w48qg")
 
+[node name="banner_thin_yellow" parent="." instance=ExtResource("13_yaehf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -3.7)
+
+[node name="banner_thin_blue" parent="." instance=ExtResource("14_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79999995, 0, -3.7)
+
 [node name="torch_mounted" parent="." instance=ExtResource("12_dg77c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.1, -3.5)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.400001, 2.1, 0.5999999)
+
+[node name="torch_mounted2" parent="." instance=ExtResource("12_dg77c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.0999994, 2.1, 0.5999999)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://yranf8adw2nu"]
+
+[ext_resource type="PackedScene" uid="uid://dmbbl6x8m8wo4" path="res://assets/props/keg_decorated/keg_decorated.glb" id="1_kata2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5npte"]
+
+[node name="keg_decorated" type="StaticBody3D"]
+
+[node name="keg_decorated2" parent="." instance=ExtResource("1_kata2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.1933207e-07, 2.1, 0, -2.7299995, -9.1793915e-08, 0, 0, 0, 2.52, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_5npte")
