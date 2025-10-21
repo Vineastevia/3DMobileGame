@@ -10,7 +10,8 @@ var door_open: bool = false
 
 func _ready() -> void:
 	open_label.visible = false
-	$ButtonAction.connect("input_event", Callable(self, "_on_ButtonAction_input_event"))
+	var button = get_node("ButtonAction")
+	button.connect("input_event", _on_ButtonAction_input_event)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	animation_finished = true
@@ -30,7 +31,7 @@ func _on_ButtonAction_input_event(camera: Node, event: InputEvent, event_positio
 	if not is_in_range:
 		return
 
-	if event is InputEventScreenTouch and event.pressed:
+	if (event is InputEventScreenTouch and event.pressed):
 		print("toucher détecté sur la porte")
 		if animation_finished:
 			animation_finished = false

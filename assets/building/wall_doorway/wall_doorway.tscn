@@ -151,14 +151,14 @@ shape = SubResource("BoxShape3D_787ka")
 script = ExtResource("2_v2iui")
 
 [node name="ButtonAction" type="Area3D" parent="wall_doorway2"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.08, 1.6, 0)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.08, 1.9000001, 0)
 
 [node name="Label3D" type="Label3D" parent="wall_doorway2/ButtonAction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29999998)
 text = "Ouvrir"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_doorway2/ButtonAction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.4, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.6, 0.1, 0, 0)
 shape = SubResource("BoxShape3D_v2iui")
 
 [node name="wall_doorway" type="MeshInstance3D" parent="wall_doorway2"]
@@ -189,8 +189,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_ys2bv")
 }
 
-[connection signal="input_event" from="wall_doorway2/ButtonAction" to="wall_doorway2" method="_on_button_action_input_event"]
-[connection signal="mouse_exited" from="wall_doorway2/ButtonAction" to="wall_doorway2" method="_on_button_action_mouse_exited"]
 [connection signal="visibility_changed" from="wall_doorway2/ButtonAction/Label3D" to="wall_doorway2" method="_on_label_3d_visibility_changed"]
 [connection signal="body_entered" from="wall_doorway2/InteractionArea" to="wall_doorway2" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="wall_doorway2/InteractionArea" to="wall_doorway2" method="_on_interaction_area_body_exited"]

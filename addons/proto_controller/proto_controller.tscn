@@ -30,6 +30,3 @@ shape = SubResource("CapsuleShape3D_iof21")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-
-[node name="InteractRay" type="RayCast3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, -6.81898e-08, -1, 0, 1.56, -4.37114e-08, 0, -0.3, -0.5)
