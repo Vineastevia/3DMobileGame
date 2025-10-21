@@ -1,42 +1,38 @@
 extends Node3D
-@onready var collider: CollisionShape3D = $CollisionShape3D 
 
-@export var open_angle: float = 90.0        # Angle d’ouverture en degrés
-@export var open_speed: float = 2.0         # Vitesse d’ouverture
-@export var is_open: bool = false           # État initial de la porte
+@onready var animation = $AnimationPlayer
+@onready var interaction_area: Area3D = $InteractionArea
+@onready var open_label: Area3D = $ButtonAction
 
-var target_angle: float = 0.0
-var current_angle: float = 0.0
-var animating: bool = false
+var animation_finished: bool = true
+var is_in_range: bool = false
+var door_open: bool = false
 
-func _ready():
-	# Initialise la position selon l'état
-	target_angle = open_angle if is_open else 0.0
-	current_angle = target_angle
-	rotation_degrees.y = current_angle
+func _ready() -> void:
+	open_label.visible = false
+	$ButtonAction.connect("input_event", Callable(self, "_on_ButtonAction_input_event"))
 
-func _process(delta):
-	if animating:
-		current_angle = lerp(current_angle, target_angle, delta * open_speed)
-		rotation_degrees.y = current_angle
-		# Si on est proche de la cible, stoppe l'anim
-		if abs(current_angle - target_angle) < 0.5:
-			current_angle = target_angle
-			animating = false
-			if collider:
-				collider.disabled = false
-				
-func interact():
-	if animating:
-		return 
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	animation_finished = true
 
-	is_open = not is_open
-	target_angle = open_angle if is_open else 0.0
-	animating = true
+func _on_interaction_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player") and not door_open:
+		is_in_range = true
+		open_label.visible = true
 
-	print("Porte ", "ouverte" if is_open else "fermée")
+func _on_interaction_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		is_in_range = false
+		open_label.visible = false
 
-	# Désactive temporairement la collision
-	if collider:
-		collider.disabled = true
- 
+func _on_ButtonAction_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	print("dans input_event")
+	if not is_in_range:
+		return
+
+	if event is InputEventScreenTouch and event.pressed:
+		print("toucher détecté sur la porte")
+		if animation_finished:
+			animation_finished = false
+			door_open = true
+			animation.play("DoorOpen")

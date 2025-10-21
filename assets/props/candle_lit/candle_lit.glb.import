@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d27js2jup64y8"
-path="res://.godot/imported/coin_stack.glb-f528a886c5d98fd703b0cefa6be27d75.scn"
+uid="uid://b7rkjvgyexy0"
+path="res://.godot/imported/candle_lit.glb-4cc61f199a5e5d98b4fde4fb84e08f08.scn"
 
 [deps]
 
-source_file="res://assets/props/coin_stack/coin_stack.glb"
-dest_files=["res://.godot/imported/coin_stack.glb-f528a886c5d98fd703b0cefa6be27d75.scn"]
+source_file="res://assets/props/candle_lit/candle_lit.glb"
+dest_files=["res://.godot/imported/candle_lit.glb-4cc61f199a5e5d98b4fde4fb84e08f08.scn"]
 
 [params]
 
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"DungeonMat": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/textures/mat_dungeon.tres",
-"use_external/path": "uid://cu5kaojjrwhee"
-}
-}
-}
-gltf/naming_version=1
+_subresources={}
+gltf/naming_version=2
 gltf/embedded_image_handling=1
