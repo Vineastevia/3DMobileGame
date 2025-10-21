@@ -6,7 +6,6 @@
 extends CharacterBody3D
 
 @onready var joystick_look: VirtualJoystickLook = $"../CanvasLayer/JoystickLook"
-@onready var interact_prompt: Label = $"../CanvasLayer/InteractPrompt"
 @onready var interact_ray: RayCast3D = $Head/InteractRay
 
 var interact_target: Node = null

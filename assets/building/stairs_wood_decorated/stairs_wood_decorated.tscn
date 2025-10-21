@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://byvivyfs7sjkd"]
+
+[ext_resource type="PackedScene" uid="uid://m20xumfrc0cu" path="res://assets/building/stairs_wood_decorated/stairs_wood_decorated.glb" id="1_743pr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8pvil"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="stairs_wood_decorated2" parent="." instance=ExtResource("1_743pr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.7190013, 0, 0, 0, 2.2704082, 2.4534175, 0, -3.9324615, 1.4164814, 0, 1.2, 2.4)
+shape = SubResource("CapsuleShape3D_8pvil")
