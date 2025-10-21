@@ -151,15 +151,16 @@ shape = SubResource("BoxShape3D_787ka")
 script = ExtResource("2_v2iui")
 
 [node name="ButtonAction" type="Area3D" parent="wall_doorway2"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.08, 1.9000001, 0)
+transform = Transform3D(1.1000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.08, 1.9000001, 0)
 
 [node name="Label3D" type="Label3D" parent="wall_doorway2/ButtonAction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29999998)
 text = "Ouvrir"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_doorway2/ButtonAction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.6, 0.1, 0, 0)
+transform = Transform3D(2.1532001, 0, 0, 0, 2.7225003, 0, 0, 0, 1.3478401, 7.450581e-09, -0.39999998, 0)
 shape = SubResource("BoxShape3D_v2iui")
+debug_color = Color(0.8497087, 0.32831776, 0.47314054, 0.41960785)
 
 [node name="wall_doorway" type="MeshInstance3D" parent="wall_doorway2"]
 mesh = SubResource("ArrayMesh_8rn7j")
@@ -189,7 +190,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_ys2bv")
 }
 
-[connection signal="visibility_changed" from="wall_doorway2/ButtonAction/Label3D" to="wall_doorway2" method="_on_label_3d_visibility_changed"]
 [connection signal="body_entered" from="wall_doorway2/InteractionArea" to="wall_doorway2" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="wall_doorway2/InteractionArea" to="wall_doorway2" method="_on_interaction_area_body_exited"]
 [connection signal="animation_finished" from="wall_doorway2/AnimationPlayer" to="wall_doorway2" method="_on_animation_player_animation_finished"]

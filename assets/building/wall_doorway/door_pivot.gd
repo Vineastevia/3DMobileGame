@@ -13,7 +13,7 @@ func _ready() -> void:
 	var button = get_node("ButtonAction")
 	button.connect("input_event", _on_ButtonAction_input_event)
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	animation_finished = true
 
 func _on_interaction_area_body_entered(body: Node3D) -> void:
@@ -26,7 +26,7 @@ func _on_interaction_area_body_exited(body: Node3D) -> void:
 		is_in_range = false
 		open_label.visible = false
 
-func _on_ButtonAction_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+func _on_ButtonAction_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	print("dans input_event")
 	if not is_in_range:
 		return
@@ -35,5 +35,10 @@ func _on_ButtonAction_input_event(camera: Node, event: InputEvent, event_positio
 		print("toucher détecté sur la porte")
 		if animation_finished:
 			animation_finished = false
-			door_open = true
-			animation.play("DoorOpen")
+			if not door_open:
+				animation.play("DoorOpen")
+				
+			else:
+				animation.play("DoorClose")
+			
+			door_open = not door_open
