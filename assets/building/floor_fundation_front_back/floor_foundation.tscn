@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqxg5nupo634j"]
+
+[ext_resource type="PackedScene" uid="uid://7dnhtepjaw7j" path="res://assets/building/floor_fundation_front_back/floor_foundation_front_and_back.glb" id="1_oi21c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npsk3"]
+
+[node name="floor_foundation" type="StaticBody3D"]
+
+[node name="floor_foundation_front_and_back2" parent="." instance=ExtResource("1_oi21c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.2, 0, 0, 0, 2.4, 0, 0, 0, 2.2, 0, 0.90000004, 0)
+shape = SubResource("BoxShape3D_npsk3")

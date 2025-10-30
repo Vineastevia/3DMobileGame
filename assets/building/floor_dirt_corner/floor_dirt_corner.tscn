@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgf4aksqov468"]
+
+[ext_resource type="PackedScene" uid="uid://chp8cbuu4w5qe" path="res://assets/building/floor_dirt_corner/floor_dirt_corner.glb" id="1_u5wf7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ogl0"]
+
+[node name="floor_dirt_corner" type="StaticBody3D"]
+
+[node name="floor_dirt_corner" parent="." instance=ExtResource("1_u5wf7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 0.2, 0, 0, 0, 2.0691, 0, 0, 0)
+shape = SubResource("BoxShape3D_1ogl0")

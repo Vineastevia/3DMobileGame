@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy4kwbupgsqqc"]
+
+[ext_resource type="PackedScene" uid="uid://slr0s8q5fp3a" path="res://assets/props/barrier_colum_half/barrier_colum_half.glb" id="1_lws45"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlosp"]
+
+[node name="barrier_colum_half" type="StaticBody3D"]
+
+[node name="barrier_colum_half2" parent="." instance=ExtResource("1_lws45")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.4, 0, 0, 0, 1.1, 0, 0, 0, 1, 0.8, 0.70000005, 0)
+shape = SubResource("BoxShape3D_wlosp")

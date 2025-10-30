@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0c66xkvw2o5m"]
+
+[ext_resource type="PackedScene" uid="uid://bb5b8i68g3ajj" path="res://assets/building/floor_tile_weeds_A/floor_tile_small_weeds_A.glb" id="1_ebu2o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ogl0"]
+
+[node name="floor_tile_small_weeds_A" type="StaticBody3D"]
+
+[node name="floor_tile_small_weeds_A2" parent="." instance=ExtResource("1_ebu2o")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 0.2, 0, 0, 0, 2.0691, 0, 0, 0)
+shape = SubResource("BoxShape3D_1ogl0")

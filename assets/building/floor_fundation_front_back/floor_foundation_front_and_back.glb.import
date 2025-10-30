@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cagvlkpd63yxg"
-path="res://.godot/imported/table_long_tablecloth_decorated_A.glb-0ea14a690ca9d6c72334169289c34325.scn"
+uid="uid://7dnhtepjaw7j"
+path="res://.godot/imported/floor_foundation_front_and_back.glb-1e23a8483bc2b62e57b66faf7c936f26.scn"
 
 [deps]
 
-source_file="res://assets/building/table_decorated_A/table_long_tablecloth_decorated_A.glb"
-dest_files=["res://.godot/imported/table_long_tablecloth_decorated_A.glb-0ea14a690ca9d6c72334169289c34325.scn"]
+source_file="res://assets/building/floor_fundation_front_back/floor_foundation_front_and_back.glb"
+dest_files=["res://.godot/imported/floor_foundation_front_and_back.glb-1e23a8483bc2b62e57b66faf7c936f26.scn"]
 
 [params]
 

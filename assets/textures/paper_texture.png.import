@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2nwqwkbrdqsu"
-path.s3tc="res://.godot/imported/stool_dungeon_texture.png-24aa468603d0b08615060b1f755871a0.s3tc.ctex"
+uid="uid://cdrewhpi8ce77"
+path.s3tc="res://.godot/imported/paper_texture.png-3bbf8a9c2f8712c90e0d3d1a990dd6a2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "33c924802a36c4f3415e10bb6940e832"
-}
 
 [deps]
 
-source_file="res://assets/building/stool/stool_dungeon_texture.png"
-dest_files=["res://.godot/imported/stool_dungeon_texture.png-24aa468603d0b08615060b1f755871a0.s3tc.ctex"]
+source_file="res://assets/textures/paper_texture.png"
+dest_files=["res://.godot/imported/paper_texture.png-3bbf8a9c2f8712c90e0d3d1a990dd6a2.s3tc.ctex"]
 
 [params]
 

@@ -27,12 +27,10 @@ func _on_interaction_area_body_exited(body: Node3D) -> void:
 		open_label.visible = false
 
 func _on_ButtonAction_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	print("dans input_event")
 	if not is_in_range:
 		return
 
 	if (event is InputEventScreenTouch and event.pressed):
-		print("toucher détecté sur la porte")
 		if animation_finished:
 			animation_finished = false
 			if not door_open:
