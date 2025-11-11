@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=4 uid="uid://cfg31rowns86q"]
 
-[ext_resource type="Script" uid="uid://b3m41v5w8vr3u" path="res://assets/creatures/blue_snake_scene.gd" id="1_teyge"]
+[ext_resource type="Script" uid="uid://bpww2apccy77w" path="res://assets/creatures/snake.gd" id="1_teyge"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6we5"]
 resource_name = "DarkGreen"

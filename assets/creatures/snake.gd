@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var snake_jumping: bool = false
+
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
