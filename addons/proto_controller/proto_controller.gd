@@ -12,7 +12,7 @@ extends CharacterBody3D
 ## Are we affected by gravity?
 @export var has_gravity : bool = true
 ## Can we press to jump?
-@export var can_jump : bool = true
+@export var can_jump : bool = false
 ## Can we hold to run?
 @export var can_sprint : bool = false
 
@@ -22,7 +22,7 @@ extends CharacterBody3D
 ## Normal speed.
 @export var base_speed : float = 5.0
 ## Speed of jump.
-@export var jump_velocity : float = 4.5
+@export var jump_velocity : float = 2.5
 ## How fast do we run?
 @export var sprint_speed : float = 10.0
 
@@ -127,3 +127,11 @@ func check_input_mappings():
 	if can_sprint and not InputMap.has_action(input_sprint):
 		push_error("Sprinting disabled. No InputAction found for input_sprint: " + input_sprint)
 		can_sprint = false
+
+func set_jump_enabled(enabled: bool) -> void:
+	can_jump = enabled
+	print("Player can_jump set to: ", can_jump)
+
+func set_jump_velocity(velocity: float) -> void:
+	jump_velocity = velocity
+	print("Player jump_velocity set to: ", jump_velocity)

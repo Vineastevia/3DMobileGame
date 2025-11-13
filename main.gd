@@ -6,10 +6,11 @@ extends Node3D
 	$LuaRune
 ]
 
-@onready var doorLocked: Node3D = $smallerRoom/wall/wall/DoorPuzzle;
+@onready var doorLockedRoom1: Node3D = $smallerRoom/wall/Door1/DoorPuzzle;
 
 var correct_rune = "PythonRune"
 var door_unlocked = false
+var keyObtained = false
 
 func _ready():
 	$notePython.connect("lettre_lue", _on_lettre_lue)
@@ -26,16 +27,14 @@ func _on_lettre_lue(id):
 		print("Lettre", id, "fermée — affichage du bouton correspondant")
 		boutons[index].visible = true
 	else:
-		# Si c’est la 4ᵉ feuille (ou autre), on ne fait rien
 		print("Lettre non active, pas de bouton associé :", id)
 
 func _on_rune_activated(rune_name: String) -> void:
 	if door_unlocked:
-		return  # Already solved
+		return
 	
 	if rune_name == correct_rune:
-		print("Correct rune! Opening door...")
-		doorLocked.open_door_from_puzzle()
+		doorLockedRoom1.open_door_from_puzzle()
 		door_unlocked = true
 	else:
 		print("Wrong rune:", rune_name, "- Try another one!")

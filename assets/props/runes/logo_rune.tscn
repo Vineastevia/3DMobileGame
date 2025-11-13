@@ -102,7 +102,7 @@ mesh = SubResource("BoxMesh_x6n8p")
 [node name="ButtonAction" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonAction"]
-transform = Transform3D(1.1543716, 0, 0, 0, 1.2525963, 0, 0, 0, 0.34812263, -0.009020746, -0.014164597, 0.114058435)
+transform = Transform3D(1.6170145, 0, 0, 0, 1.4745266, 0, 0, 0, 0.5863772, -0.009020746, -0.014164597, 0.114058435)
 shape = SubResource("BoxShape3D_135pn")
 debug_color = Color(0.9411765, 0.6, 0.69803923, 0.41960785)
 
@@ -110,7 +110,7 @@ debug_color = Color(0.9411765, 0.6, 0.69803923, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.11694521)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
-transform = Transform3D(0.8601912, 0, 0, 0, 1, 0, 0, 0, 0.9305343, 0, 0.2355957, 0.22395557)
+transform = Transform3D(0.8361059, 0, 0, 0, 1, 0, 0, 0, 1.4637305, 0, 0.2355957, 0.22395557)
 shape = SubResource("BoxShape3D_p7cn2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

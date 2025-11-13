@@ -86,7 +86,7 @@ metadata/extras = {
 }
 }
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6yog6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ayrv0"]
 resource_name = "Root Scene_Snake"
 _surfaces = [{
 "aabb": AABB(-0.0044794474, -0.01331565, -0.00029965676, 0.008958895, 0.02602027, 0.030359851),
@@ -188,7 +188,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_mgh22"]
+[sub_resource type="Skin" id="Skin_mm4fb"]
 resource_name = "Skin"
 bind_count = 15
 bind/0/name = &"Root"
@@ -237,16 +237,16 @@ bind/14/name = &"Tongue3"
 bind/14/bone = -1
 bind/14/pose = Transform3D(-1.0000001, -2.8900263e-07, 1.7977483e-06, -7.422868e-10, -0.9872582, -0.15912268, 1.8208294e-06, -0.15912275, 0.9872587, -0.00011811802, -0.00930914, -0.02491212)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1n1b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eov54"]
 albedo_color = Color(1, 0.83137256, 0.23137255, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbfkn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eke2"]
 albedo_color = Color(1, 0.83137256, 0.23137255, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eka6b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntem"]
 albedo_color = Color(0.25882354, 1, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayrv0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjdtm"]
 albedo_color = Color(0.25882354, 0.5019608, 1, 1)
 
 [sub_resource type="Animation" id="Animation_o6hy5"]
@@ -693,12 +693,12 @@ _data = {
 &"SnakeArmature|Snake_Walk": SubResource("Animation_5higm")
 }
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_i1n1b"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q72yb"]
 
-[node name="blue_snake" type="StaticBody3D"]
+[node name="yellow_snake" type="CharacterBody3D"]
+script = ExtResource("1_ayrv0")
 
 [node name="Root Scene" type="Node3D" parent="."]
-script = ExtResource("1_ayrv0")
 
 [node name="RootNode" type="Node3D" parent="Root Scene"]
 
@@ -853,12 +853,12 @@ bone_idx = 14
 transform = Transform3D(1, -2.1175824e-22, 9.264423e-23, 2.1175824e-22, 1, 3.469447e-18, -9.264423e-23, -3.469447e-18, 1, 0, 0.0026831797, 4.440892e-18)
 
 [node name="Snake" type="MeshInstance3D" parent="Root Scene/RootNode/SnakeArmature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_6yog6")
-skin = SubResource("Skin_mgh22")
-surface_material_override/0 = SubResource("StandardMaterial3D_i1n1b")
-surface_material_override/1 = SubResource("StandardMaterial3D_nbfkn")
-surface_material_override/5 = SubResource("StandardMaterial3D_eka6b")
-surface_material_override/6 = SubResource("StandardMaterial3D_ayrv0")
+mesh = SubResource("ArrayMesh_ayrv0")
+skin = SubResource("Skin_mm4fb")
+surface_material_override/0 = SubResource("StandardMaterial3D_eov54")
+surface_material_override/1 = SubResource("StandardMaterial3D_3eke2")
+surface_material_override/5 = SubResource("StandardMaterial3D_5ntem")
+surface_material_override/6 = SubResource("StandardMaterial3D_vjdtm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Root Scene"]
 libraries = {
@@ -867,4 +867,4 @@ libraries = {
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 1.5, 0, 0, 0, 2.88, 0, 1.6, 0.1)
-shape = SubResource("CylinderShape3D_i1n1b")
+shape = SubResource("CylinderShape3D_q72yb")
