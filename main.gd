@@ -37,8 +37,7 @@ func _on_rune_activated(rune_name: String) -> void:
 		doorLockedRoom1.open_door_from_puzzle()
 		door_unlocked = true
 	else:
-		print("Wrong rune:", rune_name, "- Try another one!")
-		# Optional: Add visual/audio feedback for wrong choice
+		print("Wrong rune:", rune_name)
 		give_wrong_feedback(rune_name)
 
 func give_wrong_feedback(_rune_name: String) -> void:

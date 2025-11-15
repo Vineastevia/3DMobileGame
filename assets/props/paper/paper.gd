@@ -4,14 +4,12 @@ signal lettre_lue(id)
 
 @export var letter_mat: StandardMaterial3D
 
-@onready var player = get_tree().current_scene.get_node("Player")
 @onready var joystick_layer = get_tree().current_scene.get_node("CanvasLayer")
 
 @onready var ui_letter = get_tree().current_scene.get_node("ui_letter")
 @onready var letter2D : TextureRect = ui_letter.get_node("letter")
 @onready var close_button = ui_letter.get_node("CloseButton")
 
-@onready var interaction_area: Area3D = $InteractionArea
 @onready var read_label: Area3D = $ButtonAction
 
 var letter_opened: bool = false

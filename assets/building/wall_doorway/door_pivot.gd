@@ -3,7 +3,6 @@ extends Node3D
 @export var requires_puzzle: bool = false
 
 @onready var animation = $AnimationPlayer
-@onready var interaction_area: Area3D = $InteractionArea
 @onready var open_label: Area3D = $ButtonAction
 
 var animation_finished: bool = true

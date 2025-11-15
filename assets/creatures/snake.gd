@@ -8,7 +8,7 @@ extends CharacterBody3D
 
 var snake_jumping_velocity: float = 15.0
 var jump_timer: float = 0.0
-var jump_interval: float = 5.0
+var jump_interval: float = 3.0
 var gravity: float = 20.0
 
 func _ready() -> void:
@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	# Gère le timer de saut
 	if is_demonstration and snake_jumping:
 		jump_timer += delta
 		if jump_timer >= jump_interval and is_on_floor():

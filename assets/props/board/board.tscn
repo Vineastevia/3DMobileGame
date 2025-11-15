@@ -1,33 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2aki0ffjqy67"]
+[gd_scene load_steps=6 format=3 uid="uid://6cyqgrn26dsd"]
 
-[ext_resource type="Script" uid="uid://blloluifnvev0" path="res://assets/props/board/board.gd" id="1_7lc4p"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hnbh8"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_vduj8"]
+[sub_resource type="BoxMesh" id="BoxMesh_gi54c"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lc4p"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnbh8"]
 albedo_color = Color(0.6313726, 0.40784314, 0.3647059, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_o58ti"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogsah"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oc40g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7sip"]
 albedo_color = Color(0.9961346, 0.8119071, 0.65826005, 1)
 
-[node name="board" type="Node3D"]
-script = ExtResource("1_7lc4p")
+[node name="Board" type="Area3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.3967212, 0, 0, 0, 1.015559, 0, 0, 0, 0.12913834, 0, 0, 0)
+shape = SubResource("BoxShape3D_hnbh8")
+
+[node name="BoardCase" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 0.07559999, 0, 0, 0)
-mesh = SubResource("BoxMesh_vduj8")
-surface_material_override/0 = SubResource("StandardMaterial3D_7lc4p")
+mesh = SubResource("BoxMesh_gi54c")
+surface_material_override/0 = SubResource("StandardMaterial3D_hnbh8")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, -4.371139e-08, -0.416198, 0, 1, -1.8192592e-08, 0, 0, 0.040270604)
-mesh = SubResource("PlaneMesh_o58ti")
-surface_material_override/0 = SubResource("StandardMaterial3D_oc40g")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.044849545)
-modulate = Color(0.33739027, 0.19952974, 0.17326054, 1)
-outline_modulate = Color(0, 0, 0, 0)
-text = "dqdq"
-font_size = 27
+mesh = SubResource("PlaneMesh_ogsah")
+surface_material_override/0 = SubResource("StandardMaterial3D_g7sip")

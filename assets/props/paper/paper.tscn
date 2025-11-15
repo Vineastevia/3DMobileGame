@@ -19,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 script = ExtResource("1_1is5y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.66, 0, 0, 0, -3.934025e-08, 1, 0, -0.9, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(0.66, 0, 0, 0, -2.7538174e-08, 1, 0, -0.63, -4.371139e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_1is5y")
 mesh = SubResource("QuadMesh_agkho")
 
@@ -37,14 +37,14 @@ transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64
 text = "Lire"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ButtonAction"]
-transform = Transform3D(2.578576, 0, 0, 0, 0.31751987, 0, 0, 0, 1.9656, 0, 0.39236382, 0)
+transform = Transform3D(1.0314304, 0, 0, 0, 0.034927174, 0, 0, 0, 1.3759199, 0, 0.092363805, 0)
 shape = SubResource("BoxShape3D_cmhr0")
 debug_color = Color(0.8761284, 0.6076439, 0.8047091, 0.41960785)
 
 [node name="InteractionArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
-transform = Transform3D(2.9887002, 0, 0, 0, 0.858, 0, 0, 0, 3.0600002, 0, 0.6970001, 0)
+transform = Transform3D(11.715705, 0, 0, 0, 1.5444, 0, 0, 0, 11.639629, 0, 0.6970001, 0)
 shape = SubResource("CylinderShape3D_1is5y")
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
