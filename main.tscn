@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=108 format=4 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -56,16 +56,17 @@
 [ext_resource type="PackedScene" uid="uid://pdw1ew7r3q8p" path="res://assets/props/bottle_A/bottle_A.glb" id="40_ruth0"]
 [ext_resource type="PackedScene" uid="uid://cpwoy44pio248" path="res://assets/props/bottle_B/bottle_B.glb" id="41_rm4vd"]
 [ext_resource type="PackedScene" uid="uid://bvo74epiuv6yr" path="res://assets/props/candles/candles.tscn" id="42_rm4vd"]
-[ext_resource type="PackedScene" uid="uid://b2m48npbga7mb" path="res://addons/custom_button/jumpButton/jumping_button.tscn" id="43_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://bmgtgyrld2r1c" path="res://assets/building/pillar/pillar.tscn" id="43_wnkbs"]
 [ext_resource type="PackedScene" uid="uid://btn5qw88btfdi" path="res://assets/building/wall_gated/wall_gated.tscn" id="44_f6a44"]
 [ext_resource type="PackedScene" uid="uid://d37mcp1oidaro" path="res://assets/creatures/green_snake.tscn" id="45_uatky"]
 [ext_resource type="PackedScene" uid="uid://qi7nf0uojskv" path="res://assets/props/board/jumping_panel.tscn" id="52_uatky"]
+[ext_resource type="PackedScene" uid="uid://c4532ukmusoop" path="res://assets/props/board/jump_velocity_panel.tscn" id="53_1vm84"]
 [ext_resource type="PackedScene" uid="uid://f0xhp2ylbuhu" path="res://assets/building/wall_arched/wall_arched.tscn" id="56_vke2r"]
 [ext_resource type="PackedScene" uid="uid://oym2sxlicwma" path="res://assets/props/sword_shield/sword_shield.glb" id="57_uit24"]
 [ext_resource type="PackedScene" uid="uid://b1quqdy2ejbk8" path="res://assets/props/table_medium/table_medium.tscn" id="63_uatky"]
 [ext_resource type="PackedScene" uid="uid://c7qjwerfo80j5" path="res://assets/props/keyring/keyring.tscn" id="64_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://bprxel0nas5vp" path="res://assets/props/chair/chair.tscn" id="65_1vm84"]
+[ext_resource type="PackedScene" uid="uid://cseyqrd1jrpd7" path="res://addons/custom_button/jumpButton/jump_button.tscn" id="65_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://bnn8okjyswfa" path="res://assets/props/candle_lit/candle_lit.tscn" id="66_wu3dr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
@@ -1148,9 +1149,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.65
 [node name="floor_wood28" parent="bigRoom/floor_wood" instance=ExtResource("2_h2yge")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.552174, 0.027112722, -17.686058)
 
-[node name="Switch" parent="bigRoom/floor_wood" instance=ExtResource("31_rqtf5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.914092, 1.7835702, -4.3969083)
-
 [node name="elevated_floor" type="Node3D" parent="bigRoom"]
 transform = Transform3D(1, 0, 0, 0, 0.567, 0, 0, 0, 1, 0, 0.18548131, 0)
 
@@ -1272,6 +1270,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14,
 
 [node name="decorations" type="Node3D" parent="bigRoom"]
 
+[node name="Switch" parent="bigRoom/decorations" instance=ExtResource("31_rqtf5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.6575475, 1.7835702, -4.3969083)
+
 [node name="coin_stack_large2" parent="bigRoom/decorations" instance=ExtResource("33_4w656")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1, 0.3, -16)
 
@@ -1366,7 +1367,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99794745, 5.597871, -23.349
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5025043, 5.597871, -23.34956)
 
 [node name="green_snake" parent="bigRoom/decorations" instance=ExtResource("45_uatky")]
-transform = Transform3D(-0.32, 0, -3.496911e-08, 0, 0.39999998, 0, 2.7975288e-08, 0, -0.39999998, -12.200001, 0, -5.200001)
+transform = Transform3D(0.18816002, 0, 4.1962924e-08, 0, 0.19999999, 0, -3.2898946e-08, 0, 0.23999996, -11.330167, 0.8, -18.614296)
 snake_jumping = true
 is_demonstration = true
 
@@ -1406,8 +1407,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.2, -4.6)
 [node name="candle_lit2" parent="bigRoom/decorations" instance=ExtResource("66_wu3dr")]
 transform = Transform3D(0.539, 0, 0, 0, 0.6, 0, 0, 0, 0.56, -19.3, 1.2, -4.9)
 
+[node name="jump_velocity_panel" parent="bigRoom/decorations" instance=ExtResource("53_1vm84")]
+transform = Transform3D(-1.9489603, 0, -8.742278e-08, 0, 1.8515337, 0, 1.7038353e-07, 0, -1, -11.154336, 2.496518, -4.2977524)
+
 [node name="JumpingPanel" parent="bigRoom/decorations" instance=ExtResource("52_uatky")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.663246, 2.5096478, -4.2808585)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.4067016, 2.5096478, -4.2808585)
 
 [node name="paper" parent="." instance=ExtResource("31_4k2k6")]
 transform = Transform3D(0.55530065, 0, -0.2584518, 0, 0.9999992, 0, 0.26501948, 0, 0.54153925, 4.5, 0.5065739, 0.49609274)
@@ -1444,16 +1448,14 @@ environment = SubResource("Environment_w48qg")
 transform = Transform3D(0.39429182, -0.32319778, 0.8602774, 0.2184159, 0.9422503, 0.25388744, -0.8926526, 0.08779251, 0.4421131, 0, 17.2, -25)
 
 [node name="ui_letter" parent="." instance=ExtResource("27_qsp4k")]
+offset_left = -52.0
+offset_right = -12.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="JumpingButton" parent="CanvasLayer" instance=ExtResource("43_0n3wm")]
-visible = false
-offset_left = 973.0
-offset_top = 298.0
-offset_right = 981.0
-offset_bottom = 306.0
-scale = Vector2(1.5322591, 1.589289)
+[node name="jumpButton" parent="CanvasLayer" instance=ExtResource("65_rqtf5")]
+position = Vector2(991.99994, 294.99997)
+scale = Vector2(1.4399903, 1.4399976)
 
 [node name="JoystickMove" parent="CanvasLayer" instance=ExtResource("13_ycdy4")]
 offset_top = -241.0

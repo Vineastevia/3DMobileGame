@@ -11,17 +11,18 @@ offset_bottom = 40.0
 
 [node name="letter" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 375.0
-offset_top = 23.0
-offset_right = 775.0
-offset_bottom = 623.0
+offset_left = 300.0
+offset_top = 25.0
+offset_right = 891.0
+offset_bottom = 625.0
 texture = ExtResource("1_h14a0")
 
 [node name="CloseButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 885.0
-offset_right = 903.0
-offset_bottom = 31.0
+offset_left = 911.0
+offset_top = 25.0
+offset_right = 929.0
+offset_bottom = 56.0
 scale = Vector2(2, 2)
 script = ExtResource("2_08q7n")
 

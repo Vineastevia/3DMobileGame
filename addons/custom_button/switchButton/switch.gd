@@ -1,5 +1,8 @@
 extends StaticBody3D
 
+signal jump_toggled(enabled: bool)
+signal set_velocity(jump_force: float)
+
 @onready var animation_player = $AnimationPlayer
 @onready var button = $switch/Button
 
@@ -36,6 +39,4 @@ func _on_Button_input_event(_camera: Node, event: InputEvent, _event_position: V
 				else:
 					animation_player.play("Slide-False")
 					
-				var player = get_tree().get_nodes_in_group("player")[0]
-				if player and player.has_method("set_jump_enabled"):
-					player.set_jump_enabled(is_toggled)
+				jump_toggled.emit(is_toggled)

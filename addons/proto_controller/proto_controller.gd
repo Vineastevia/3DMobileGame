@@ -128,10 +128,17 @@ func check_input_mappings():
 		push_error("Sprinting disabled. No InputAction found for input_sprint: " + input_sprint)
 		can_sprint = false
 
-func set_jump_enabled(enabled: bool) -> void:
+func _on_jump_toggled(enabled: bool) -> void:
 	can_jump = enabled
-	print("Player can_jump set to: ", can_jump)
+	print("Jump enabled:", can_jump)
 
+func _on_jump_button_pressed() -> void:
+	print("jump button pressed")
+	if can_jump and is_on_floor():
+		print("ok can jump + is on floor")
+		velocity.y = jump_velocity
+		print("Jump triggered from UI button!")
+		
 func set_jump_velocity(velocity: float) -> void:
 	jump_velocity = velocity
 	print("Player jump_velocity set to: ", jump_velocity)

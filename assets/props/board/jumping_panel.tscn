@@ -13,9 +13,7 @@ albedo_texture = ExtResource("2_udjth")
 [node name="Board" parent="." instance=ExtResource("1_udrq2")]
 transform = Transform3D(3.1515272, 0, 0, 0, 2.6232421, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="."]
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.742316, 0, 0, 0, 2.2537298, 0, 0, 0, 1.2119461, -0.033632994, 0, 0.089748144)
+transform = Transform3D(3.8537645, 0, 0, 0, 2.2537298, 0, 0, 0, 1.2119461, 0.012304723, 0, 0.08190417)
 material_override = SubResource("StandardMaterial3D_eaogw")
 mesh = SubResource("QuadMesh_tgfha")

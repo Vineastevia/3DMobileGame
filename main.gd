@@ -7,6 +7,9 @@ extends Node3D
 ]
 
 @onready var doorLockedRoom1: Node3D = $smallerRoom/wall/Door1/DoorPuzzle;
+@onready var player: CharacterBody3D = $Player
+@onready var switch_jump_button: StaticBody3D = $bigRoom/decorations/Switch
+@onready var jumping_button: TouchScreenButton = $CanvasLayer/jumpButton
 
 var correct_rune = "PythonRune"
 var door_unlocked = false
@@ -20,6 +23,11 @@ func _ready():
 	for b in boutons:
 		b.visible = false
 		b.connect("rune_activated", _on_rune_activated)
+		
+	switch_jump_button.jump_toggled.connect(_on_jump_toggled)
+	jumping_button.jump_pressed.connect(player._on_jump_button_pressed)
+	
+	jumping_button.visible = false
 
 func _on_lettre_lue(id):
 	var index = id - 1
@@ -43,3 +51,7 @@ func _on_rune_activated(rune_name: String) -> void:
 func give_wrong_feedback(_rune_name: String) -> void:
 	# Optional: shake camera, play sound, flash rune, etc.
 	print("That's not the right rune!")
+	
+func _on_jump_toggled(enabled: bool) -> void:
+	player._on_jump_toggled(enabled)
+	jumping_button.visible = enabled

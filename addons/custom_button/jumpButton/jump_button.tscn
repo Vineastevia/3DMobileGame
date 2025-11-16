@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cseyqrd1jrpd7"]
+
+[ext_resource type="Script" uid="uid://d0rilp5iaatub" path="res://addons/custom_button/jumpButton/jump_button.gd" id="1_pojri"]
+[ext_resource type="Texture2D" uid="uid://bnu1olgqf4px6" path="res://assets/textures/JumpingButton.png" id="2_mrb6m"]
+
+[node name="jumpButton" type="TouchScreenButton"]
+position = Vector2(933, 335)
+texture_normal = ExtResource("2_mrb6m")
+script = ExtResource("1_pojri")
