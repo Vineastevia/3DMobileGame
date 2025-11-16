@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=126 format=4 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://dy4kwbupgsqqc" path="res://assets/props/barrier_colum_half/barrier_colum_half.tscn" id="29_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://bpv6ix233uwci" path="res://assets/props/paper/paper.tscn" id="31_4k2k6"]
 [ext_resource type="PackedScene" uid="uid://du4ir5wad1ibu" path="res://addons/custom_button/switchButton/switch.tscn" id="31_rqtf5"]
+[ext_resource type="PackedScene" uid="uid://bb415j5tfvh3i" path="res://addons/custom_button/change_jump_velocity_button/change_jump_velocity_button.tscn" id="31_wu3dr"]
 [ext_resource type="Texture2D" uid="uid://quexrfnn2t80" path="res://assets/textures/formule_C.png" id="32_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://cdrewhpi8ce77" path="res://assets/textures/paper_texture.png" id="32_ok6jj"]
 [ext_resource type="Texture2D" uid="uid://dv83tb7htxwf6" path="res://assets/textures/formule_lua.png" id="33_4lmeg"]
@@ -49,7 +50,10 @@
 [ext_resource type="Texture2D" uid="uid://hsyeb5t0xowl" path="res://assets/textures/lua_logo.png" id="35_come4"]
 [ext_resource type="Texture2D" uid="uid://c6tjhr1xhmqrs" path="res://assets/textures/c_logo.png" id="35_h8e4i"]
 [ext_resource type="PackedScene" uid="uid://jddqni5g3h0x" path="res://assets/props/coin_stack_small/coin_stack_small.glb" id="35_rnkwl"]
+[ext_resource type="Script" uid="uid://b5vky37xqa0ug" path="res://addons/custom_button/change_jump_velocity_button/button_change_jump_velocity.gd" id="36_0dhbp"]
 [ext_resource type="PackedScene" uid="uid://dsv6esnn0aaso" path="res://assets/props/chest_gold/chest_gold.glb" id="36_vke2r"]
+[ext_resource type="Texture2D" uid="uid://dg6wmb2s2kmrh" path="res://assets/textures/arrow_up_icon.png" id="37_jx0wj"]
+[ext_resource type="Texture2D" uid="uid://b7a142knhpsxq" path="res://assets/textures/arrow_down_icon.png" id="37_kkkcx"]
 [ext_resource type="PackedScene" uid="uid://wxgn3bfrtle0" path="res://assets/props/banner_mounted/banner_mounted.tscn" id="37_uit24"]
 [ext_resource type="PackedScene" uid="uid://cqnp8ghstn6xy" path="res://assets/props/box_small_decorated/box_small_decorated_2.tscn" id="38_rnkwl"]
 [ext_resource type="PackedScene" uid="uid://b2mivxa7o4vts" path="res://assets/props/table_decorated_A/table_long_tablecloth.tscn" id="39_vke2r"]
@@ -326,6 +330,88 @@ _data = {
 &"DoorOpen": SubResource("Animation_c2n8d"),
 &"RESET": SubResource("Animation_wy5fy")
 }
+
+[sub_resource type="BoxMesh" id="BoxMesh_w3abr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76rsc"]
+albedo_color = Color(0.33739027, 0.19952974, 0.17326054, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jmddd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wdee"]
+albedo_color = Color(0.9961346, 0.8119071, 0.65826005, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3abr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jx0wj"]
+transparency = 1
+albedo_color = Color(0.8437769, 0.34498593, 0.7451093, 1)
+albedo_texture = ExtResource("37_kkkcx")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jmddd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8ryi"]
+transparency = 1
+albedo_color = Color(0.8437769, 0.34498593, 0.7451093, 1)
+albedo_texture = ExtResource("37_jx0wj")
+
+[sub_resource type="Animation" id="Animation_jmddd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.14471042)]
+}
+
+[sub_resource type="Animation" id="Animation_76rsc"]
+resource_name = "pressed"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.14471042), Vector3(0, 0, 0.11338845), Vector3(0, 0, 0.08250812)]
+}
+
+[sub_resource type="Animation" id="Animation_8wdee"]
+resource_name = "released"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.083), Vector3(0, 0, 0.113), Vector3(0, 0, 0.14471042)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i8ryi"]
+_data = {
+&"RESET": SubResource("Animation_jmddd"),
+&"pressed": SubResource("Animation_76rsc"),
+&"released": SubResource("Animation_8wdee")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmddd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8wdee"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_umee1"]
 _surfaces = [{
@@ -1270,8 +1356,81 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14,
 
 [node name="decorations" type="Node3D" parent="bigRoom"]
 
+[node name="increaseButton" parent="bigRoom/decorations" instance=ExtResource("31_wu3dr")]
+transform = Transform3D(4.92652e-16, 1.1728889e-08, 0.4534671, 0, 0.26832572, -1.9821677e-08, -0.25784045, 0, 8.6643297e-16, -13.584156, 1.8940854, -15.742978)
+
+[node name="decreaseButton" type="StaticBody3D" parent="bigRoom/decorations"]
+transform = Transform3D(-1.0534444e-08, 0, 0.453, 0, 0.267, 0, -0.241, 0, -1.980126e-08, -13.584, 1.894, -15.28999)
+script = ExtResource("36_0dhbp")
+is_increment = false
+
+[node name="ButtonCase" type="Node3D" parent="bigRoom/decorations/decreaseButton"]
+
+[node name="ButtonCase" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton/ButtonCase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15240222, 0, 0, 0)
+mesh = SubResource("BoxMesh_w3abr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_76rsc")
+
+[node name="ButtonCase2" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton/ButtonCase"]
+transform = Transform3D(1, 0, 0, 0, 0.0879699, 0, 0, 0, 0.15240222, 0, 0.4565695, 0.077347755)
+mesh = SubResource("BoxMesh_w3abr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_76rsc")
+
+[node name="ButtonCase3" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton/ButtonCase"]
+transform = Transform3D(1, 0, 0, 0, 0.0879699, 0, 0, 0, 0.15240222, 0, -0.45658168, 0.077347755)
+mesh = SubResource("BoxMesh_w3abr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_76rsc")
+
+[node name="ButtonCase4" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton/ButtonCase"]
+transform = Transform3D(-3.934025e-08, -0.0879699, 0, 0.8999999, -3.8452863e-09, 0, 0, 0, 0.15240222, -0.45783854, -0.004124701, 0.077347755)
+mesh = SubResource("BoxMesh_w3abr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_76rsc")
+
+[node name="ButtonCase5" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton/ButtonCase"]
+transform = Transform3D(-3.934025e-08, -0.0879699, 0, 0.8999999, -3.8452863e-09, 0, 0, 0, 0.15240222, 0.45607418, -0.004124701, 0.077347755)
+mesh = SubResource("BoxMesh_w3abr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_76rsc")
+
+[node name="Button" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton"]
+transform = Transform3D(0.7186749, 0, 0, 0, 0.7402512, 0, 0, 0, 0.07944411, 0, 0, 0.14471042)
+mesh = SubResource("BoxMesh_jmddd")
+surface_material_override/0 = SubResource("StandardMaterial3D_8wdee")
+
+[node name="button" type="Area3D" parent="bigRoom/decorations/decreaseButton/Button"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bigRoom/decorations/decreaseButton/Button/button"]
+transform = Transform3D(1.0518811, 0, 0, 0, 1.056605, 0, 0, 0, 1.3604579, 0, 0, 0)
+shape = SubResource("BoxShape3D_w3abr")
+debug_color = Color(0.7953447, 0.3951544, 0.42573422, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bigRoom/decorations/decreaseButton/Button/button"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52244246)
+material_override = SubResource("StandardMaterial3D_jx0wj")
+mesh = SubResource("QuadMesh_jmddd")
+surface_material_override/0 = SubResource("StandardMaterial3D_i8ryi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bigRoom/decorations/decreaseButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_i8ryi")
+}
+
+[node name="InteractionArea" type="Area3D" parent="bigRoom/decorations/decreaseButton"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bigRoom/decorations/decreaseButton/InteractionArea"]
+transform = Transform3D(2.5418644, 0, 0, 0, 3.947124, 0, 0, 0, 4.5631876, 0.97007895, 0, 0)
+shape = SubResource("BoxShape3D_jmddd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bigRoom/decorations/decreaseButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3111902, 0, 0, 0)
+shape = SubResource("BoxShape3D_8wdee")
+
 [node name="Switch" parent="bigRoom/decorations" instance=ExtResource("31_rqtf5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.6575475, 1.7835702, -4.3969083)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.357548, 1.7835702, -5.6969085)
 
 [node name="coin_stack_large2" parent="bigRoom/decorations" instance=ExtResource("33_4w656")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1, 0.3, -16)
@@ -1349,13 +1508,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.329314, 1.2, -18.3)
 transform = Transform3D(0.44099998, 0, 0, 0, 0.39999998, 0, 0, 0, 0.44099998, -6.1293144, 1.3000001, -18)
 
 [node name="box_large" parent="bigRoom/decorations" instance=ExtResource("13_qsp4k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.599999, 0.10000001, -18.300001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.599999, 0.10000001, -5.0000014)
 
 [node name="candles1" parent="bigRoom/decorations" instance=ExtResource("42_rm4vd")]
-transform = Transform3D(0.4032, 0, 0, 0, 0.56, 0, 0, 0, 0.4, -12.899999, 1.3999999, -18.500002)
+transform = Transform3D(0.4032, 0, 0, 0, 0.56, 0, 0, 0, 0.4, -12.899999, 1.3999999, -5.1000013)
 
 [node name="candles2" parent="bigRoom/decorations" instance=ExtResource("42_rm4vd")]
-transform = Transform3D(-2.5379183e-08, 0, 0.6, 0, 0.84000003, 0, -0.58060807, 0, -2.6226834e-08, -12.599999, 1.3999999, -18.100002)
+transform = Transform3D(-2.5379183e-08, 0, 0.6, 0, 0.84000003, 0, -0.58060807, 0, -2.6226834e-08, -12.599999, 1.3999999, -4.8000026)
 
 [node name="box_small2" parent="bigRoom/decorations" instance=ExtResource("14_kq58d")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.9, -11.3, 0.10000002, -18.6)
@@ -1408,10 +1567,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.2, -4.6)
 transform = Transform3D(0.539, 0, 0, 0, 0.6, 0, 0, 0, 0.56, -19.3, 1.2, -4.9)
 
 [node name="jump_velocity_panel" parent="bigRoom/decorations" instance=ExtResource("53_1vm84")]
-transform = Transform3D(-1.9489603, 0, -8.742278e-08, 0, 1.8515337, 0, 1.7038353e-07, 0, -1, -11.154336, 2.496518, -4.2977524)
+transform = Transform3D(-5.2391403e-08, 0, 1, 0, 1.4748726, 0, -1.1985751, 0, -4.371139e-08, -13.519704, 2.496518, -9.097752)
 
 [node name="JumpingPanel" parent="bigRoom/decorations" instance=ExtResource("52_uatky")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.4067016, 2.5096478, -4.2808585)
+transform = Transform3D(-0.7, 0, -8.742278e-08, 0, 1, 0, 6.119594e-08, 0, -1, -10.306702, 2.5096478, -5.5808587)
 
 [node name="paper" parent="." instance=ExtResource("31_4k2k6")]
 transform = Transform3D(0.55530065, 0, -0.2584518, 0, 0.9999992, 0, 0.26501948, 0, 0.54153925, 4.5, 0.5065739, 0.49609274)
@@ -1481,3 +1640,5 @@ use_input_actions = false
 [connection signal="body_entered" from="bigRoom/walls/Door2/DoorPuzzle/InteractionArea" to="bigRoom/walls/Door2/DoorPuzzle" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="bigRoom/walls/Door2/DoorPuzzle/InteractionArea" to="bigRoom/walls/Door2/DoorPuzzle" method="_on_interaction_area_body_exited"]
 [connection signal="animation_finished" from="bigRoom/walls/Door2/DoorPuzzle/AnimationPlayer" to="bigRoom/walls/Door2/DoorPuzzle" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="bigRoom/decorations/decreaseButton/InteractionArea" to="bigRoom/decorations/decreaseButton" method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="bigRoom/decorations/decreaseButton/InteractionArea" to="bigRoom/decorations/decreaseButton" method="_on_interaction_area_body_exited"]

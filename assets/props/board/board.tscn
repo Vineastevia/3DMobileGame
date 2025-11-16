@@ -23,6 +23,11 @@ transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 0.07559999, 0, 0, 0)
 mesh = SubResource("BoxMesh_gi54c")
 surface_material_override/0 = SubResource("StandardMaterial3D_hnbh8")
 
+[node name="BoardCase2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.14260806, 0, 0, 0, 1, 0, 0, 0, 0.07559999, 0, -0.9486319, 0)
+mesh = SubResource("BoxMesh_gi54c")
+surface_material_override/0 = SubResource("StandardMaterial3D_hnbh8")
+
 [node name="Background" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, -4.371139e-08, -0.416198, 0, 1, -1.8192592e-08, 0, 0, 0.040270604)
 mesh = SubResource("PlaneMesh_ogsah")

@@ -10,6 +10,8 @@ extends Node3D
 @onready var player: CharacterBody3D = $Player
 @onready var switch_jump_button: StaticBody3D = $bigRoom/decorations/Switch
 @onready var jumping_button: TouchScreenButton = $CanvasLayer/jumpButton
+@onready var incr_jump_velocity: StaticBody3D = $bigRoom/decorations/increaseButton
+@onready var decr_jump_velocity: StaticBody3D = $bigRoom/decorations/decreaseButton
 
 var correct_rune = "PythonRune"
 var door_unlocked = false
@@ -27,7 +29,17 @@ func _ready():
 	switch_jump_button.jump_toggled.connect(_on_jump_toggled)
 	jumping_button.jump_pressed.connect(player._on_jump_button_pressed)
 	
+	incr_jump_velocity.value_changed.connect(_on_jump_delta_changed)
+	decr_jump_velocity.value_changed.connect(_on_jump_delta_changed)
+	
 	jumping_button.visible = false
+
+func _on_jump_delta_changed(delta_value: float) -> void:
+	player.jump_velocity = clamp(
+		player.jump_velocity + delta_value,
+		0.0,  # min
+		20.0  # max
+	)
 
 func _on_lettre_lue(id):
 	var index = id - 1

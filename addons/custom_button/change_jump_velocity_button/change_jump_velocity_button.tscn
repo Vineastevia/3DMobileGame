@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bb415j5tfvh3i"]
+[gd_scene load_steps=16 format=3 uid="uid://bb415j5tfvh3i"]
 
 [ext_resource type="Texture2D" uid="uid://dg6wmb2s2kmrh" path="res://assets/textures/arrow_up_icon.png" id="1_76rsc"]
-[ext_resource type="Script" uid="uid://b5vky37xqa0ug" path="res://addons/custom_button/increaseButton/increase_button.gd" id="1_jmddd"]
+[ext_resource type="Script" uid="uid://b5vky37xqa0ug" path="res://addons/custom_button/change_jump_velocity_button/button_change_jump_velocity.gd" id="1_jmddd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8wdee"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3abr"]
 
@@ -13,14 +15,29 @@ albedo_color = Color(0.33739027, 0.19952974, 0.17326054, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wdee"]
 albedo_color = Color(0.9961346, 0.8119071, 0.65826005, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_w3abr"]
-
 [sub_resource type="QuadMesh" id="QuadMesh_jmddd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8ryi"]
 transparency = 1
 albedo_color = Color(0.8437769, 0.34498593, 0.7451093, 1)
 albedo_texture = ExtResource("1_76rsc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3abr"]
+
+[sub_resource type="Animation" id="Animation_jmddd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.14471042)]
+}
 
 [sub_resource type="Animation" id="Animation_76rsc"]
 resource_name = "pressed"
@@ -38,23 +55,8 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0.14471042), Vector3(0, 0, 0.11338845), Vector3(0, 0, 0.08250812)]
 }
 
-[sub_resource type="Animation" id="Animation_jmddd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0.14471042)]
-}
-
 [sub_resource type="Animation" id="Animation_8wdee"]
-resource_name = "release"
+resource_name = "released"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -73,11 +75,17 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_jmddd"),
 &"pressed": SubResource("Animation_76rsc"),
-&"release": SubResource("Animation_8wdee")
+&"released": SubResource("Animation_8wdee")
 }
 
-[node name="increaseButton" type="StaticBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmddd"]
+
+[node name="change_jump_velocity" type="StaticBody3D"]
 script = ExtResource("1_jmddd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.34287253, 0, 0, 0.008470923)
+shape = SubResource("BoxShape3D_8wdee")
 
 [node name="ButtonCase" type="Node3D" parent="."]
 
@@ -116,19 +124,28 @@ transform = Transform3D(0.7186749, 0, 0, 0, 0.7402512, 0, 0, 0, 0.07944411, 0, 0
 mesh = SubResource("BoxMesh_jmddd")
 surface_material_override/0 = SubResource("StandardMaterial3D_8wdee")
 
-[node name="Area3D" type="Area3D" parent="Button"]
+[node name="button" type="Area3D" parent="Button"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button/Area3D"]
-transform = Transform3D(1.0518811, 0, 0, 0, 1.056605, 0, 0, 0, 1.3604579, 0, 0, 0)
-shape = SubResource("BoxShape3D_w3abr")
-debug_color = Color(0.7953447, 0.3951544, 0.42573422, 0.41960785)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Button/Area3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button/button"]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52244246)
 mesh = SubResource("QuadMesh_jmddd")
 surface_material_override/0 = SubResource("StandardMaterial3D_i8ryi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button/button"]
+transform = Transform3D(1.0958515, 0, 0, 0, 1.0533961, 0, 0, 0, 1.5428476, 0, 0, 0)
+shape = SubResource("BoxShape3D_w3abr")
+debug_color = Color(0.7953447, 0.3951544, 0.42573422, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_i8ryi")
 }
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(32.60588, 0, 0, 0, 19.696926, 0, 0, 0, 19.449467, 0.057876825, 0, 0)
+shape = SubResource("BoxShape3D_jmddd")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

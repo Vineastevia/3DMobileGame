@@ -11,7 +11,6 @@ var animation_finished: bool = true
 var is_toggled: bool = false
  
 func _ready() -> void:
-	var button = get_node("switch/Button")
 	button.connect("input_event", _on_Button_input_event)
 
 func _on_interaction_area_body_entered(body: Node3D) -> void:
