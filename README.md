@@ -10,15 +10,15 @@ Il s'agit d'un jeu sérieux 3D pour mobile avec pour thème un univers de Donjon
 ### Pre-requisite
 
 * install Godot 4.5
-* Python backend API server : ()
+* Python backend API server : (https://github.com/Vineastevia/fastapiserver_godotgame)
 
 ### Executing program
 
-* clone reposit
+* clone repository
 * import project
 * run main_page.tcsn 
 
-## Authors
+## Author
 
 Taina Duquenoy
 
