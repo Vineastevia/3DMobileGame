@@ -1824,8 +1824,9 @@ stream = ExtResource("81_f1p13")
 
 [node name="backgroundMusic" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("74_34ol3")
-volume_db = -4.0
+volume_db = -20.0
 autoplay = true
+parameters/looping = true
 
 [node name="puzzleResolved" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("81_4obbf")

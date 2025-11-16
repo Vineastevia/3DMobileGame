@@ -10,5 +10,5 @@ size = Vector3(1, 0.7, 1)
 [node name="stairs_walled2" parent="." instance=ExtResource("1_20ipf")]
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.269701e-07, 1.2811046e-15, 4.5, 3.3376553, 0.7211978, 1.2643707e-07, -3.9776635, 0.60515684, -1.5068191e-07, 0, 1.9157554, 2.4)
+transform = Transform3D(-2.269701e-07, 1.2811046e-15, 4.5, 3.3376553, 0.7211978, 1.2643707e-07, -3.9776635, 0.60515684, -1.5068191e-07, 0, 1.9157554, 2.144637)
 shape = SubResource("BoxShape3D_20ipf")
