@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cssqkvctyair3"]
+
+[ext_resource type="PackedScene" uid="uid://6cyqgrn26dsd" path="res://assets/props/board/board.tscn" id="1_scdrp"]
+
+[node name="PlayerJumpVelocity" type="Node3D"]
+
+[node name="Board" parent="." instance=ExtResource("1_scdrp")]
+transform = Transform3D(1.2, 0, 0, 0, 0.6, 0, 0, 0, 1, -0.007931054, 5.9604645e-08, -8.332729e-05)
+
+[node name="BoardCase2" parent="Board" index="2"]
+transform = Transform3D(0.14260806, 0, 0, 0, 5.7847385, 0, 0, 0, 0.07559999, 0, -2.445321, 0)
+
+[node name="Label" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.1, 0.2)
+
+[node name="text" type="Label3D" parent="Label"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020378381, 0, -0.15190944)
+modulate = Color(0.9961346, 0.8119071, 0.65826005, 1)
+outline_modulate = Color(0.33739027, 0.19952974, 0.17326054, 1)
+text = "jump_velocity :"
+font_size = 24
+outline_size = 5
+
+[node name="value" type="Label3D" parent="Label"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6094887, -0.0065854713, -0.15963969)
+modulate = Color(0.9961346, 0.8119071, 0.65826005, 1)
+outline_modulate = Color(0.33739027, 0.19952974, 0.17326054, 1)
+font_size = 24
+outline_size = 5
+
+[editable path="Board"]

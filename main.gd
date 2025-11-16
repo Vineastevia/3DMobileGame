@@ -12,6 +12,7 @@ extends Node3D
 @onready var jumping_button: TouchScreenButton = $CanvasLayer/jumpButton
 @onready var incr_jump_velocity: StaticBody3D = $bigRoom/decorations/increaseButton
 @onready var decr_jump_velocity: StaticBody3D = $bigRoom/decorations/decreaseButton
+@onready var label_jump_velocity: Label3D = $bigRoom/decorations/PlayerJumpVelocity/Label/value
 
 var correct_rune = "PythonRune"
 var door_unlocked = false
@@ -33,6 +34,8 @@ func _ready():
 	decr_jump_velocity.value_changed.connect(_on_jump_delta_changed)
 	
 	jumping_button.visible = false
+	
+	label_jump_velocity.text = "%.1f" % player.jump_velocity
 
 func _on_jump_delta_changed(delta_value: float) -> void:
 	player.jump_velocity = clamp(
@@ -40,6 +43,7 @@ func _on_jump_delta_changed(delta_value: float) -> void:
 		0.0,  # min
 		20.0  # max
 	)
+	label_jump_velocity.text = "%.1f" % player.jump_velocity
 
 func _on_lettre_lue(id):
 	var index = id - 1

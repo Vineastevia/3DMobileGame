@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=4 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=127 format=4 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -67,6 +67,7 @@
 [ext_resource type="PackedScene" uid="uid://c4532ukmusoop" path="res://assets/props/board/jump_velocity_panel.tscn" id="53_1vm84"]
 [ext_resource type="PackedScene" uid="uid://f0xhp2ylbuhu" path="res://assets/building/wall_arched/wall_arched.tscn" id="56_vke2r"]
 [ext_resource type="PackedScene" uid="uid://oym2sxlicwma" path="res://assets/props/sword_shield/sword_shield.glb" id="57_uit24"]
+[ext_resource type="PackedScene" uid="uid://cssqkvctyair3" path="res://assets/props/board/player_jump_velocity.tscn" id="59_kkkcx"]
 [ext_resource type="PackedScene" uid="uid://b1quqdy2ejbk8" path="res://assets/props/table_medium/table_medium.tscn" id="63_uatky"]
 [ext_resource type="PackedScene" uid="uid://c7qjwerfo80j5" path="res://assets/props/keyring/keyring.tscn" id="64_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://bprxel0nas5vp" path="res://assets/props/chair/chair.tscn" id="65_1vm84"]
@@ -1357,10 +1358,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14,
 [node name="decorations" type="Node3D" parent="bigRoom"]
 
 [node name="increaseButton" parent="bigRoom/decorations" instance=ExtResource("31_wu3dr")]
-transform = Transform3D(4.92652e-16, 1.1728889e-08, 0.4534671, 0, 0.26832572, -1.9821677e-08, -0.25784045, 0, 8.6643297e-16, -13.584156, 1.8940854, -15.742978)
+transform = Transform3D(3.941216e-16, 9.383111e-09, 0.4534671, 0, 0.21466057, -1.9821677e-08, -0.20627236, 0, 8.6643297e-16, -13.484156, 2.0940855, -8.720875)
 
 [node name="decreaseButton" type="StaticBody3D" parent="bigRoom/decorations"]
-transform = Transform3D(-1.0534444e-08, 0, 0.453, 0, 0.267, 0, -0.241, 0, -1.980126e-08, -13.584, 1.894, -15.28999)
+transform = Transform3D(-9.173939e-09, 0, 0.453, 0, 0.2136, 0, -0.20987526, 0, -1.980126e-08, -13.483999, 2.1008327, -9.044956)
 script = ExtResource("36_0dhbp")
 is_increment = false
 
@@ -1430,7 +1431,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3111902, 0, 0, 0)
 shape = SubResource("BoxShape3D_8wdee")
 
 [node name="Switch" parent="bigRoom/decorations" instance=ExtResource("31_rqtf5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.357548, 1.7835702, -5.6969085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5741, 1.7835702, -17.564308)
 
 [node name="coin_stack_large2" parent="bigRoom/decorations" instance=ExtResource("33_4w656")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1, 0.3, -16)
@@ -1567,10 +1568,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.2, -4.6)
 transform = Transform3D(0.539, 0, 0, 0, 0.6, 0, 0, 0, 0.56, -19.3, 1.2, -4.9)
 
 [node name="jump_velocity_panel" parent="bigRoom/decorations" instance=ExtResource("53_1vm84")]
-transform = Transform3D(-5.2391403e-08, 0, 1, 0, 1.4748726, 0, -1.1985751, 0, -4.371139e-08, -13.519704, 2.496518, -9.097752)
+transform = Transform3D(-5.2391403e-08, 0, 1, 0, 1.4748726, 0, -1.1985751, 0, -4.371139e-08, -13.519704, 2.496518, -6.797752)
 
 [node name="JumpingPanel" parent="bigRoom/decorations" instance=ExtResource("52_uatky")]
-transform = Transform3D(-0.7, 0, -8.742278e-08, 0, 1, 0, 6.119594e-08, 0, -1, -10.306702, 2.5096478, -5.5808587)
+transform = Transform3D(-3.059797e-08, 0, 1, 0, 1, 0, -0.7, 0, -4.371139e-08, -13.69015, 2.5096478, -16.513462)
+
+[node name="PlayerJumpVelocity" parent="bigRoom/decorations" instance=ExtResource("59_kkkcx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.5, 2.2, -8.900001)
 
 [node name="paper" parent="." instance=ExtResource("31_4k2k6")]
 transform = Transform3D(0.55530065, 0, -0.2584518, 0, 0.9999992, 0, 0.26501948, 0, 0.54153925, 4.5, 0.5065739, 0.49609274)
