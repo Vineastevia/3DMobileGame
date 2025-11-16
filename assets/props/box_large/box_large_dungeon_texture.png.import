@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://idv3kwectaub"
 path.s3tc="res://.godot/imported/box_large_dungeon_texture.png-31d0e11e5ff30c2d912bd11f5614d037.s3tc.ctex"
+path.etc2="res://.godot/imported/box_large_dungeon_texture.png-31d0e11e5ff30c2d912bd11f5614d037.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/props/box_large/box_large_dungeon_texture.png"
-dest_files=["res://.godot/imported/box_large_dungeon_texture.png-31d0e11e5ff30c2d912bd11f5614d037.s3tc.ctex"]
+dest_files=["res://.godot/imported/box_large_dungeon_texture.png-31d0e11e5ff30c2d912bd11f5614d037.s3tc.ctex", "res://.godot/imported/box_large_dungeon_texture.png-31d0e11e5ff30c2d912bd11f5614d037.etc2.ctex"]
 
 [params]
 

@@ -38,4 +38,4 @@ This project is licensed under the [DUNNO] License - see the LICENSE.md file for
 ## Acknowledgments
 
 * [Version Control consideration for Godot projects](https://stackoverflow.com/questions/68884194/import-and-tres-files-in-godotengine)
-* [abmarnie](https://github.com/abmarnie/godot-architecture-organization-advice?tab=readme-ov-file)
+* [abmarnie - Godot Architecture Organization Advice](https://github.com/abmarnie/godot-architecture-organization-advice?tab=readme-ov-file)

@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://hc8gsx6nimir"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i36ng"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ly2am"]
+albedo_color = Color(0.33739027, 0.19952974, 0.17326054, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4wm7n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iucx4"]
+albedo_color = Color(0.9961346, 0.8119071, 0.65826005, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_igc3y"]
+
+[node name="simple_button" type="Node3D"]
+
+[node name="ButtonCase" type="Node3D" parent="."]
+
+[node name="ButtonCase" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15240222, 0, 0, 0)
+mesh = SubResource("BoxMesh_i36ng")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly2am")
+
+[node name="ButtonCase2" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(1, 0, 0, 0, 0.0879699, 0, 0, 0, 0.15240222, 0, 0.4565695, 0.077347755)
+mesh = SubResource("BoxMesh_i36ng")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly2am")
+
+[node name="ButtonCase3" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(1, 0, 0, 0, 0.0879699, 0, 0, 0, 0.15240222, 0, -0.45658168, 0.077347755)
+mesh = SubResource("BoxMesh_i36ng")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly2am")
+
+[node name="ButtonCase4" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(-3.934025e-08, -0.0879699, 0, 0.8999999, -3.8452863e-09, 0, 0, 0, 0.15240222, -0.45783854, -0.004124701, 0.077347755)
+mesh = SubResource("BoxMesh_i36ng")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly2am")
+
+[node name="ButtonCase5" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(-3.934025e-08, -0.0879699, 0, 0.8999999, -3.8452863e-09, 0, 0, 0, 0.15240222, 0.45607418, -0.004124701, 0.077347755)
+mesh = SubResource("BoxMesh_i36ng")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly2am")
+
+[node name="Button" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7186749, 0, 0, 0, 0.7402512, 0, 0, 0, 0.07944411, 0, 0, 0.14471042)
+mesh = SubResource("BoxMesh_4wm7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_iucx4")
+
+[node name="Area3D" type="Area3D" parent="Button"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button/Area3D"]
+transform = Transform3D(1.0518811, 0, 0, 0, 1.056605, 0, 0, 0, 1.3604579, 0, 0, 0)
+shape = SubResource("BoxShape3D_igc3y")
+debug_color = Color(0.7953447, 0.3951544, 0.42573422, 0.41960785)

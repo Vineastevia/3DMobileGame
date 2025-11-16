@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3 uid="uid://du4ir5wad1ibu"]
+
+[ext_resource type="Script" uid="uid://bjxcv7pw4se2v" path="res://addons/custom_button/switchButton/switch.gd" id="1_nqr1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbeih"]
+albedo_color = Color(0.33739027, 0.19952974, 0.17326054, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbnye"]
+material = SubResource("StandardMaterial3D_pbeih")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcyq7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3qwc"]
+albedo_color = Color(0.6313726, 0.40784314, 0.3647059, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g1m87"]
+material = SubResource("StandardMaterial3D_u3qwc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m62yj"]
+albedo_color = Color(0.9961346, 0.8119071, 0.65826005, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_suhor"]
+material = SubResource("StandardMaterial3D_m62yj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7lxl"]
+
+[sub_resource type="Animation" id="Animation_wd62g"]
+resource_name = "Slide-True"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.033, 0, 0.1), Vector3(0.032563955, 0, 0.040227458), Vector3(0.032563955, 0, -0.05010573), Vector3(0.032563955, 0, -0.100713834)]
+}
+
+[sub_resource type="Animation" id="Animation_ky0ap"]
+resource_name = "Slide-False"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.032563955, 0, -0.100713834), Vector3(0.033, 0, -0.05), Vector3(0.033, 0, 0.04), Vector3(0.033, 0, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_ff84e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.032563955, 0, 0.09921026)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ui3tl"]
+_data = {
+&"RESET": SubResource("Animation_ff84e"),
+&"Slide-False": SubResource("Animation_ky0ap"),
+&"Slide-True": SubResource("Animation_wd62g")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e753c"]
+
+[node name="Switch" type="StaticBody3D"]
+script = ExtResource("1_nqr1i")
+
+[node name="ButtonCase" type="Node3D" parent="."]
+
+[node name="buttonCase" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(9.5162305e-09, -0.041079868, 0, 0.18836756, 2.235174e-09, 0, 0, 0, 0.4169107, 0, 0, 0)
+mesh = SubResource("BoxMesh_hbnye")
+skeleton = NodePath("../..")
+
+[node name="buttonCase2" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(9.040359e-10, -0.041079864, 0, 0.0178948, 2.2351738e-09, 0, 0, 0, 0.4169107, 0.027869776, 0.085320145, 0)
+mesh = SubResource("BoxMesh_hbnye")
+skeleton = NodePath("../..")
+
+[node name="buttonCase3" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(9.040359e-10, -0.041079864, 0, 0.0178948, 2.2351738e-09, 0, 0, 0, 0.4169107, 0.027869776, -0.085556425, 0)
+mesh = SubResource("BoxMesh_hbnye")
+skeleton = NodePath("../..")
+
+[node name="buttonCase4" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(9.0403596e-10, -0.041079868, 0, -7.822066e-10, 4.824243e-17, -0.16593507, 0.017894803, 2.2351738e-09, -7.253253e-09, 0.027869776, -0.004133031, 0.19954579)
+mesh = SubResource("BoxMesh_hbnye")
+skeleton = NodePath("../..")
+
+[node name="buttonCase5" type="MeshInstance3D" parent="ButtonCase"]
+transform = Transform3D(9.0403596e-10, -0.041079868, 0, -7.822066e-10, 4.824243e-17, -0.16593507, 0.017894803, 2.2351738e-09, -7.253253e-09, 0.027869776, -0.004133031, -0.20009033)
+mesh = SubResource("BoxMesh_hbnye")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1251919, 0, 0, 0, 0.19163378, 0, 0, 0, 0.41477168, 0, 0, 0)
+shape = SubResource("BoxShape3D_hcyq7")
+
+[node name="background" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.639187e-08, 0, 1, 0, 0.17325902, 0, -0.37500226, 0, -4.371139e-08, 0.02191092, 0, 0.003518194)
+mesh = SubResource("QuadMesh_g1m87")
+skeleton = NodePath("../ButtonCase/buttonCase")
+
+[node name="Label" type="Label3D" parent="background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002253181, 0, 0.00229837)
+modulate = Color(0.9961346, 0.8119071, 0.65826005, 1)
+outline_modulate = Color(0.33739027, 0.19952974, 0.17326054, 1)
+text = " TRUE  FALSE"
+font_size = 31
+outline_size = 7
+
+[node name="switch" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.618915e-09, 0, 0.030930264, 0, 0.15213606, 0, 0.17430049, 0, 1.3520048e-09, 0.032563955, 0, 0.09921026)
+mesh = SubResource("BoxMesh_suhor")
+
+[node name="Button" type="Area3D" parent="switch"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch/Button"]
+transform = Transform3D(1.1573837, 0, -3.5527137e-15, 0, 1.1980486, 0, -2.842171e-14, 0, 2.2292013, 0, 0, 0)
+shape = SubResource("BoxShape3D_p7lxl")
+debug_color = Color(0.91157216, 0.22319844, 0.49583972, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ui3tl")
+}
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(2.5418644, 0, 0, 0, 3.947124, 0, 0, 0, 4.5631876, 0.97007895, 0, 0)
+shape = SubResource("BoxShape3D_e753c")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

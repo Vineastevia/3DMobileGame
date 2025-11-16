@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://qi7nf0uojskv"]
+
+[ext_resource type="PackedScene" uid="uid://6cyqgrn26dsd" path="res://assets/props/board/board.tscn" id="1_udrq2"]
+[ext_resource type="Texture2D" uid="uid://176a3dffvq2h" path="res://assets/textures/boolPanel.png" id="2_udjth"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaogw"]
+albedo_texture = ExtResource("2_udjth")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tgfha"]
+
+[node name="JumpingPanel" type="Node3D"]
+
+[node name="Board" parent="." instance=ExtResource("1_udrq2")]
+transform = Transform3D(3.1515272, 0, 0, 0, 2.6232421, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.8537645, 0, 0, 0, 2.2537298, 0, 0, 0, 1.2119461, 0.012304723, 0, 0.08190417)
+material_override = SubResource("StandardMaterial3D_eaogw")
+mesh = SubResource("QuadMesh_tgfha")

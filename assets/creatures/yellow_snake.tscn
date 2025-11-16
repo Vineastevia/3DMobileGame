@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://dvsgugaygufak"]
 
-[ext_resource type="Script" uid="uid://c1k4p7jiv2qtk" path="res://assets/creatures/yellow_snake_scene.gd" id="1_ayrv0"]
+[ext_resource type="Script" uid="uid://bpww2apccy77w" path="res://assets/creatures/snake.gd" id="1_ayrv0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6we5"]
 resource_name = "DarkGreen"
@@ -86,7 +86,7 @@ metadata/extras = {
 }
 }
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6yog6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ayrv0"]
 resource_name = "Root Scene_Snake"
 _surfaces = [{
 "aabb": AABB(-0.0044794474, -0.01331565, -0.00029965676, 0.008958895, 0.02602027, 0.030359851),
@@ -188,7 +188,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_mgh22"]
+[sub_resource type="Skin" id="Skin_mm4fb"]
 resource_name = "Skin"
 bind_count = 15
 bind/0/name = &"Root"
@@ -237,16 +237,16 @@ bind/14/name = &"Tongue3"
 bind/14/bone = -1
 bind/14/pose = Transform3D(-1.0000001, -2.8900263e-07, 1.7977483e-06, -7.422868e-10, -0.9872582, -0.15912268, 1.8208294e-06, -0.15912275, 0.9872587, -0.00011811802, -0.00930914, -0.02491212)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1n1b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eov54"]
 albedo_color = Color(1, 0.83137256, 0.23137255, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbfkn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eke2"]
 albedo_color = Color(1, 0.83137256, 0.23137255, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eka6b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntem"]
 albedo_color = Color(0.25882354, 1, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayrv0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjdtm"]
 albedo_color = Color(0.25882354, 0.5019608, 1, 1)
 
 [sub_resource type="Animation" id="Animation_o6hy5"]
@@ -693,12 +693,12 @@ _data = {
 &"SnakeArmature|Snake_Walk": SubResource("Animation_5higm")
 }
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_i1n1b"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q72yb"]
 
-[node name="blue_snake" type="StaticBody3D"]
+[node name="yellow_snake" type="CharacterBody3D"]
+script = ExtResource("1_ayrv0")
 
 [node name="Root Scene" type="Node3D" parent="."]
-script = ExtResource("1_ayrv0")
 
 [node name="RootNode" type="Node3D" parent="Root Scene"]
 
@@ -717,7 +717,7 @@ bones/1/name = "Body"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.9032079e-07, 4.8097764e-08, -1.903208e-07, 1, 1.9032085e-07, -4.809773e-08, -1.9032086e-07, 1, -0.001409949, 0.010944423, -0.0030048229)
 bones/1/enabled = true
-bones/1/position = Vector3(-0.0007478638, 0.010734494, -0.0030048233)
+bones/1/position = Vector3(-0.0006397734, 0.010372523, -0.0030048233)
 bones/1/rotation = Quaternion(-9.516043e-08, 2.4048873e-08, -9.51604e-08, 1)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Chest"
@@ -725,21 +725,21 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.86337745, 0.06069806, 0.5008944, -0.006243583, 0.99394715, -0.10968395, -0.50452, 0.09157129, 0.8585304, -0.000114111404, -0.0055001914, 0.009748346)
 bones/2/enabled = true
 bones/2/position = Vector3(-0.000114111404, -0.0055001914, 0.009748346)
-bones/2/rotation = Quaternion(0.050786387, 0.25897864, -0.002312637, 0.9645442)
+bones/2/rotation = Quaternion(0.050559457, 0.2579568, -0.0010962292, 0.964832)
 bones/2/scale = Vector3(1, 1.0000002, 1.0000001)
 bones/3/name = "Neck"
 bones/3/parent = 2
 bones/3/rest = Transform3D(0.86732244, 0.374735, -0.32760543, -0.0013112127, 0.659895, 0.7513567, 0.49774474, -0.6512391, 0.5728332, 3.1664968e-10, 0.008788994, -1.117587e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(3.1664968e-10, 0.008788994, -1.117587e-09)
-bones/3/rotation = Quaternion(-0.45232195, -0.22644988, -0.11901934, 0.85437685)
+bones/3/rotation = Quaternion(-0.456581, -0.22577703, -0.11998317, 0.8521518)
 bones/3/scale = Vector3(0.9999999, 1, 1)
 bones/4/name = "Head"
 bones/4/parent = 3
 bones/4/rest = Transform3D(-0.9877856, -0.014734868, -0.15512274, -0.14311752, 0.4795025, 0.86579114, 0.06162448, 0.8774163, -0.4757545, 4.1909514e-11, 0.008236597, 1.930166e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(4.1909514e-11, 0.008236597, 1.930166e-09)
-bones/4/rotation = Quaternion(-0.038931046, 0.79801506, 0.59754884, -0.06776266)
+bones/4/rotation = Quaternion(-0.038335875, 0.7927548, 0.6045102, -0.06810081)
 bones/4/scale = Vector3(1.0000002, 0.9999996, 0.9999999)
 bones/5/name = "Tail"
 bones/5/parent = 0
@@ -753,21 +753,21 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(0.9994652, 0.0030967817, 0.032553174, 0.017424144, 0.79197407, -0.61030585, -0.027671259, 0.61054665, 0.79149663, 4.302083e-12, 0.0047899154, -1.0419171e-10)
 bones/6/enabled = true
 bones/6/position = Vector3(4.302083e-12, 0.0047899154, -1.0419171e-10)
-bones/6/rotation = Quaternion(0.26113307, 0.0071519543, 0.0012309962, 0.9652756)
+bones/6/rotation = Quaternion(0.21086128, -1.7753339e-09, -3.9581214e-09, 0.9775161)
 bones/6/scale = Vector3(1, 0.9999998, 0.99999994)
 bones/7/name = "Tail2"
 bones/7/parent = 6
 bones/7/rest = Transform3D(0.99793166, 0.014501388, 0.06262684, 0.018926486, 0.864763, -0.5018233, -0.06143451, 0.5019706, 0.8627, -1.3877787e-19, 0.004905116, 2.2700987e-11)
 bones/7/enabled = true
 bones/7/position = Vector3(-1.3877787e-19, 0.004905116, 2.2700987e-11)
-bones/7/rotation = Quaternion(0.13571541, 0.014299143, 0.00051004137, 0.99064463)
+bones/7/rotation = Quaternion(0.035646155, 3.943177e-10, 2.7939677e-09, 0.99936455)
 bones/7/scale = Vector3(1, 0.9999999, 1)
 bones/8/name = "Tail3"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.9983003, 0.008478505, 0.05765921, 0.011916617, 0.9387611, -0.3443622, -0.05704791, 0.34446397, 0.9370646, -1.11758706e-10, 0.0035821188, 1.3998942e-10)
 bones/8/enabled = true
 bones/8/position = Vector3(-1.11758706e-10, 0.0035821188, 1.3998942e-10)
-bones/8/rotation = Quaternion(0.061067086, 0.012965151, 0.00038860115, 0.9980494)
+bones/8/rotation = Quaternion(-0.029959602, -1.8044377e-09, -4.6566134e-10, 0.9995512)
 bones/8/scale = Vector3(0.99999994, 0.9999999, 0.99999994)
 bones/9/name = "PoleTarget"
 bones/9/parent = 0
@@ -780,29 +780,29 @@ bones/10/name = "Mouth"
 bones/10/parent = 0
 bones/10/rest = Transform3D(-0.99998057, 9.572034e-07, -0.0062332326, -0.0062328493, -0.011242272, 0.9999174, -6.911857e-05, 0.99993694, 0.011242059, -0.00035620868, 0.026777681, 0.004025883)
 bones/10/enabled = true
-bones/10/position = Vector3(-0.00015700988, 0.025639981, 0.004025894)
-bones/10/rotation = Quaternion(-0.0022158078, 0.7031174, 0.71106696, -0.0021917087)
+bones/10/position = Vector3(-7.805886e-05, 0.025195884, 0.0040258984)
+bones/10/rotation = Quaternion(-0.0022159144, 0.7031169, 0.71106744, -0.0021908348)
 bones/10/scale = Vector3(1, 1.0000001, 1)
 bones/11/name = "LowerMouth"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.99998057, 0.0022871445, -0.0057963715, -2.7858187e-07, 0.9302208, 0.3670005, 0.006231288, -0.3669933, 0.93020284, 7.3505844e-06, 0.0017982147, -0.0011794748)
 bones/11/enabled = true
 bones/11/position = Vector3(7.3505844e-06, 0.0017982147, -0.0011794748)
-bones/11/rotation = Quaternion(-0.18678671, -0.0030607986, -0.0005821034, 0.9823955)
+bones/11/rotation = Quaternion(-0.18678674, -0.0030607982, -0.0005821035, 0.9823955)
 bones/11/scale = Vector3(0.99999994, 1, 1.0000001)
 bones/12/name = "Tongue1"
 bones/12/parent = 10
 bones/12/rest = Transform3D(-0.99998045, -0.00038567442, 0.006226876, 4.218163e-07, 0.9980831, 0.061886083, -0.0062388084, 0.06188488, -0.9980637, 3.1911135e-05, 0.0043453714, -0.0011932601)
 bones/12/enabled = true
 bones/12/position = Vector3(3.1911135e-05, 0.0043453714, -0.0011932601)
-bones/12/rotation = Quaternion(0.000609416, 0.98064125, -0.1957883, 0.0030591113)
+bones/12/rotation = Quaternion(0.0006094161, 0.98064125, -0.19578832, 0.0030591113)
 bones/12/scale = Vector3(0.9999999, 0.9999999, 0.9999999)
 bones/13/name = "Tongue2"
 bones/13/parent = 12
 bones/13/rest = Transform3D(-1, 2.787213e-06, -3.0978147e-06, 1.2799575e-06, 0.91289896, 0.40818614, 3.9656925e-06, 0.40818623, -0.91289866, -3.144578e-12, 0.0031961154, 2.924186e-10)
 bones/13/enabled = true
 bones/13/position = Vector3(-3.144578e-12, 0.0031961154, 2.924186e-10)
-bones/13/rotation = Quaternion(-1.3438549e-06, 0.96417326, -0.26527345, -1.8399595e-06)
+bones/13/rotation = Quaternion(-1.3438552e-06, 0.9641733, -0.26527342, -1.83996e-06)
 bones/13/scale = Vector3(1, 1.0000002, 0.99999994)
 bones/14/name = "Tongue3"
 bones/14/parent = 13
@@ -813,7 +813,7 @@ bones/14/rotation = Quaternion(0.1912949, 6.595052e-07, -4.7044932e-07, 0.981532
 bones/14/scale = Vector3(1, 0.99999976, 0.9999998)
 
 [node name="Head" type="BoneAttachment3D" parent="Root Scene/RootNode/SnakeArmature/Skeleton3D"]
-transform = Transform3D(-0.98733366, 0.04847087, -0.1510734, -0.15785053, -0.39608496, 0.90454394, -0.015993897, 0.9169334, 0.39871925, -0.00049493054, -0.0012645768, 0.01924757)
+transform = Transform3D(-0.9875558, 0.047987282, -0.14977026, -0.15633783, -0.4030813, 0.9017115, -0.017098907, 0.91390496, 0.4055676, -0.0004125989, -0.0012158034, 0.018824589)
 bone_name = "Head"
 bone_idx = 4
 
@@ -821,7 +821,7 @@ bone_idx = 4
 transform = Transform3D(1, 6.938894e-18, -3.85186e-34, -6.938894e-18, 1, -5.551115e-17, 0, 5.551115e-17, 1, -1.3877787e-19, 0.0069715194, 5.551115e-19)
 
 [node name="Tail3" type="BoneAttachment3D" parent="Root Scene/RootNode/SnakeArmature/Skeleton3D"]
-transform = Transform3D(0.9897895, 0.14233702, 0.0075419624, -0.12612756, 0.8992627, -0.4188286, -0.06639704, 0.41360062, 0.9080336, 0.0011123081, 0.008526387, 0.0027408157)
+transform = Transform3D(0.98998076, 0.14094836, 0.00845696, -0.14120188, 0.9882031, 0.0592923, -4.2087397e-08, -0.059892513, 0.9982044, 0.0010989743, 0.008684695, 0.0011600384)
 bone_name = "Tail3"
 bone_idx = 8
 
@@ -837,7 +837,7 @@ bone_idx = 9
 transform = Transform3D(1, 2.1486822e-29, 1.0587912e-22, -2.1486822e-29, 1, 9.0277966e-36, -1.0587912e-22, -9.0277966e-36, 1, 0, 0.0030912089, 0)
 
 [node name="LowerMouth" type="BoneAttachment3D" parent="Root Scene/RootNode/SnakeArmature/Skeleton3D"]
-transform = Transform3D(-0.99999994, 1.7860439e-06, -1.3797544e-06, -1.1338707e-06, -0.926036, -0.3774352, -1.9520521e-06, -0.37743506, 0.92603606, -0.00015700389, -0.0058107376, 0.02444034)
+transform = Transform3D(-0.99999994, 9.9651515e-08, -8.880161e-07, 2.4281326e-07, -0.92603546, -0.37743652, -8.600764e-07, -0.37743634, 0.9260355, -7.805663e-05, -0.0058107404, 0.02399624)
 bone_name = "LowerMouth"
 bone_idx = 11
 
@@ -845,7 +845,7 @@ bone_idx = 11
 transform = Transform3D(1, -2.3509887e-38, 4.2351647e-22, 0, 1, 5.551115e-17, -4.2351647e-22, -5.551115e-17, 1, 0, 0.0066668955, 0)
 
 [node name="Tongue3" type="BoneAttachment3D" parent="Root Scene/RootNode/SnakeArmature/Skeleton3D"]
-transform = Transform3D(-0.9999999, 5.8563796e-07, 2.849913e-08, -4.9516586e-07, -0.869518, 0.4939009, 3.1264335e-07, 0.4939009, 0.86951774, -0.00018146576, -0.013738245, 0.02346082)
+transform = Transform3D(-0.9999999, -7.181325e-08, 1.6575149e-06, 8.8138705e-07, -0.86951876, 0.49389958, 1.4055555e-06, 0.49389952, 0.86951846, -0.00010253048, -0.013738246, 0.02301671)
 bone_name = "Tongue3"
 bone_idx = 14
 
@@ -853,12 +853,12 @@ bone_idx = 14
 transform = Transform3D(1, -2.1175824e-22, 9.264423e-23, 2.1175824e-22, 1, 3.469447e-18, -9.264423e-23, -3.469447e-18, 1, 0, 0.0026831797, 4.440892e-18)
 
 [node name="Snake" type="MeshInstance3D" parent="Root Scene/RootNode/SnakeArmature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_6yog6")
-skin = SubResource("Skin_mgh22")
-surface_material_override/0 = SubResource("StandardMaterial3D_i1n1b")
-surface_material_override/1 = SubResource("StandardMaterial3D_nbfkn")
-surface_material_override/5 = SubResource("StandardMaterial3D_eka6b")
-surface_material_override/6 = SubResource("StandardMaterial3D_ayrv0")
+mesh = SubResource("ArrayMesh_ayrv0")
+skin = SubResource("Skin_mm4fb")
+surface_material_override/0 = SubResource("StandardMaterial3D_eov54")
+surface_material_override/1 = SubResource("StandardMaterial3D_3eke2")
+surface_material_override/5 = SubResource("StandardMaterial3D_5ntem")
+surface_material_override/6 = SubResource("StandardMaterial3D_vjdtm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Root Scene"]
 libraries = {
@@ -867,4 +867,4 @@ libraries = {
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 1.5, 0, 0, 0, 2.88, 0, 1.6, 0.1)
-shape = SubResource("CylinderShape3D_i1n1b")
+shape = SubResource("CylinderShape3D_q72yb")

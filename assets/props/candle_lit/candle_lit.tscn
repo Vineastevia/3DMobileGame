@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnn8okjyswfa"]
+
+[ext_resource type="PackedScene" uid="uid://b7rkjvgyexy0" path="res://assets/props/candle_lit/candle_lit.glb" id="1_1mwue"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_db4hy"]
+height = 1.1
+
+[node name="candle_lit" type="StaticBody3D"]
+
+[node name="candle_lit2" parent="." instance=ExtResource("1_1mwue")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.39999998, 0, 0, 0, 0.9, 0, 0, 0, 0.5, 0, 0.40499997, 0)
+shape = SubResource("CapsuleShape3D_db4hy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+light_color = Color(1, 0.6666667, 0.38431373, 1)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4532ukmusoop"]
+
+[ext_resource type="Texture2D" uid="uid://dukmulb0ypgi1" path="res://assets/textures/floatPanel.png" id="1_th6vx"]
+[ext_resource type="PackedScene" uid="uid://6cyqgrn26dsd" path="res://assets/props/board/board.tscn" id="2_hppbh"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_mujm4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptbgi"]
+albedo_texture = ExtResource("1_th6vx")
+
+[node name="jump_velocity_panel" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.671394, 0, 0, 0, 1.2019367, 0, 0, 0, 1, 0, 0, 0.059740305)
+mesh = SubResource("QuadMesh_mujm4")
+skeleton = NodePath("../Board")
+surface_material_override/0 = SubResource("StandardMaterial3D_ptbgi")
+
+[node name="Board" parent="." instance=ExtResource("2_hppbh")]
+transform = Transform3D(1.3809547, 0, 0, 0, 1.4430064, 0, 0, 0, 1, 0, 0, 0)

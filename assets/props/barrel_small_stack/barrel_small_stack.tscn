@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dng08rv5yfmvo"]
+
+[ext_resource type="PackedScene" uid="uid://bos6x3hqgrnyc" path="res://assets/props/barrel_small_stack/barrel_small_stack.glb" id="1_xdbm2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c615r"]
+size = Vector3(1, 1.7, 1)
+
+[node name="barrel_small_stack" type="StaticBody3D"]
+
+[node name="barrel_small_stack2" parent="." instance=ExtResource("1_xdbm2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.8, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95000005, 0)
+shape = SubResource("BoxShape3D_c615r")

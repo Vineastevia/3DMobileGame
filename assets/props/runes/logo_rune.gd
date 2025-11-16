@@ -4,10 +4,7 @@ signal rune_activated(rune_name: String)
 
 @export var letter_mat: StandardMaterial3D
 
-@onready var camera = get_viewport().get_camera_3d()
 @onready var animation = $AnimationPlayer
-@onready var interaction_area: Area3D = $InteractionArea
-@onready var open_label: Area3D = $ButtonAction
 
 var animation_finished: bool = true
 var is_in_range: bool = false
@@ -28,13 +25,11 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 func _on_interaction_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		is_in_range = true
-		print("is in range")
 
 
 func _on_interaction_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		is_in_range = false
-		print("is not in range")
 	
 func _on_ButtonAction_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	
@@ -48,4 +43,3 @@ func _on_ButtonAction_input_event(_camera: Node, event: InputEvent, _event_posit
 			animation.play("Click")
 			is_activated = true
 			rune_activated.emit(name)
-			print("Rune clicked:", name)

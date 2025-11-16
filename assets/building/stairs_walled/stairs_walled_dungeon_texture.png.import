@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://btkbyeqmv3s32"
 path.s3tc="res://.godot/imported/stairs_walled_dungeon_texture.png-b87882e69c90fb2a585edad9c8715b25.s3tc.ctex"
+path.etc2="res://.godot/imported/stairs_walled_dungeon_texture.png-b87882e69c90fb2a585edad9c8715b25.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/building/stairs_walled/stairs_walled_dungeon_texture.png"
-dest_files=["res://.godot/imported/stairs_walled_dungeon_texture.png-b87882e69c90fb2a585edad9c8715b25.s3tc.ctex"]
+dest_files=["res://.godot/imported/stairs_walled_dungeon_texture.png-b87882e69c90fb2a585edad9c8715b25.s3tc.ctex", "res://.godot/imported/stairs_walled_dungeon_texture.png-b87882e69c90fb2a585edad9c8715b25.etc2.ctex"]
 
 [params]
 
