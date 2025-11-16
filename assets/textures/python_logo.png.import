@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd7f8kha42i0i"
 path.s3tc="res://.godot/imported/python_logo.png-8f03b414504a2cc445a82b5a12879c6d.s3tc.ctex"
+path.etc2="res://.godot/imported/python_logo.png-8f03b414504a2cc445a82b5a12879c6d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/python_logo.png"
-dest_files=["res://.godot/imported/python_logo.png-8f03b414504a2cc445a82b5a12879c6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/python_logo.png-8f03b414504a2cc445a82b5a12879c6d.s3tc.ctex", "res://.godot/imported/python_logo.png-8f03b414504a2cc445a82b5a12879c6d.etc2.ctex"]
 
 [params]
 

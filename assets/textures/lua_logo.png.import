@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hsyeb5t0xowl"
 path.s3tc="res://.godot/imported/lua_logo.png-d9cd6cde5545e9fd79f66d9cba71d3e8.s3tc.ctex"
+path.etc2="res://.godot/imported/lua_logo.png-d9cd6cde5545e9fd79f66d9cba71d3e8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/lua_logo.png"
-dest_files=["res://.godot/imported/lua_logo.png-d9cd6cde5545e9fd79f66d9cba71d3e8.s3tc.ctex"]
+dest_files=["res://.godot/imported/lua_logo.png-d9cd6cde5545e9fd79f66d9cba71d3e8.s3tc.ctex", "res://.godot/imported/lua_logo.png-d9cd6cde5545e9fd79f66d9cba71d3e8.etc2.ctex"]
 
 [params]
 

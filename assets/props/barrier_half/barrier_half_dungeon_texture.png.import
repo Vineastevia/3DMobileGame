@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c517up38ynp2p"
 path.s3tc="res://.godot/imported/barrier_half_dungeon_texture.png-a0616614fffe715b58c7b5743fabae51.s3tc.ctex"
+path.etc2="res://.godot/imported/barrier_half_dungeon_texture.png-a0616614fffe715b58c7b5743fabae51.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/props/barrier_half/barrier_half_dungeon_texture.png"
-dest_files=["res://.godot/imported/barrier_half_dungeon_texture.png-a0616614fffe715b58c7b5743fabae51.s3tc.ctex"]
+dest_files=["res://.godot/imported/barrier_half_dungeon_texture.png-a0616614fffe715b58c7b5743fabae51.s3tc.ctex", "res://.godot/imported/barrier_half_dungeon_texture.png-a0616614fffe715b58c7b5743fabae51.etc2.ctex"]
 
 [params]
 

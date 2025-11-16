@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tgxqgdr2d6uy"
 path.s3tc="res://.godot/imported/bed_floor_dungeon_texture.png-638b8316530879f0aabc8c53034f331c.s3tc.ctex"
+path.etc2="res://.godot/imported/bed_floor_dungeon_texture.png-638b8316530879f0aabc8c53034f331c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/props/bed_floor/bed_floor_dungeon_texture.png"
-dest_files=["res://.godot/imported/bed_floor_dungeon_texture.png-638b8316530879f0aabc8c53034f331c.s3tc.ctex"]
+dest_files=["res://.godot/imported/bed_floor_dungeon_texture.png-638b8316530879f0aabc8c53034f331c.s3tc.ctex", "res://.godot/imported/bed_floor_dungeon_texture.png-638b8316530879f0aabc8c53034f331c.etc2.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=4 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=134 format=4 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -79,6 +79,7 @@
 [ext_resource type="AudioStream" uid="uid://3jkegkklg73n" path="res://musics/sound_ambiance.mp3" id="74_34ol3"]
 [ext_resource type="PackedScene" uid="uid://06smwrteli6r" path="res://assets/building/floor_stone/floor_stone.tscn" id="75_wy5fy"]
 [ext_resource type="PackedScene" uid="uid://di2in3akjsy16" path="res://assets/building/wall_doorway/wall_doorway.tscn" id="76_gx4rg"]
+[ext_resource type="Script" uid="uid://dvhrk4vvcnwjs" path="res://get_data_from_server.gd" id="80_birbe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 transparency = 1
@@ -1008,6 +1009,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.
 [node name="wall_arched3" parent="bigRoom/walls" instance=ExtResource("56_vke2r")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.67765, 3.7, -15.6)
 
+[node name="wall13" parent="bigRoom/walls" instance=ExtResource("1_0xm2m")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.9, 9.685755e-08, -25.899998)
+
+[node name="wall14" parent="bigRoom/walls" instance=ExtResource("1_0xm2m")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9, 9.685755e-08, -25.899998)
+
+[node name="wall15" parent="bigRoom/walls" instance=ExtResource("1_0xm2m")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.9, 3.9932156, -25.899998)
+
+[node name="wall16" parent="bigRoom/walls" instance=ExtResource("1_0xm2m")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9, 3.9932156, -25.899998)
+
 [node name="ceiling" type="Node3D" parent="bigRoom"]
 
 [node name="ceiling41" parent="bigRoom/ceiling" instance=ExtResource("1_dg77c")]
@@ -1724,7 +1737,7 @@ transform = Transform3D(1.0000005, 0, 0, 0, 1, 0, -1.7763568e-14, 0, 1, 0, -1.70
 transform = Transform3D(1.0784861, 0, 0, 0, 1.6787537, 0, -1.7763568e-14, 0, 1, 0.018741608, -1.722148, -0.20815277)
 modulate = Color(0.9961346, 0.8119071, 0.65826005, 1)
 outline_modulate = Color(0.6313726, 0.40784314, 0.3647059, 1)
-text = "Boucle While"
+text = "Tab - Dico"
 font = ExtResource("64_birbe")
 outline_size = 5
 
@@ -1738,7 +1751,7 @@ transform = Transform3D(1.0000005, 0, 0, 0, 1, 0, -1.7763568e-14, 0, 1, 0, -1.70
 transform = Transform3D(1.0784861, 0, 0, 0, 1.6787537, 0, -1.7763568e-14, 0, 1, 0.018741608, -1.722148, -0.20815277)
 modulate = Color(0.9961346, 0.8119071, 0.65826005, 1)
 outline_modulate = Color(0.6313726, 0.40784314, 0.3647059, 1)
-text = "Boucle For"
+text = "Boucles"
 font = ExtResource("64_birbe")
 outline_size = 5
 
@@ -1808,17 +1821,14 @@ use_input_actions = false
 stream = ExtResource("74_34ol3")
 autoplay = true
 
-[node name="wall13" parent="." instance=ExtResource("1_0xm2m")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.9, 9.685755e-08, -25.899998)
+[node name="getDataFromServer" type="Node" parent="."]
+script = ExtResource("80_birbe")
 
-[node name="wall14" parent="." instance=ExtResource("1_0xm2m")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9, 9.685755e-08, -25.899998)
+[node name="GetBoardsData" type="HTTPRequest" parent="getDataFromServer"]
 
-[node name="wall15" parent="." instance=ExtResource("1_0xm2m")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.9, 3.9932156, -25.899998)
+[node name="GetIntroductionData" type="HTTPRequest" parent="getDataFromServer"]
 
-[node name="wall16" parent="." instance=ExtResource("1_0xm2m")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9, 3.9932156, -25.899998)
+[node name="GetLoopsData" type="HTTPRequest" parent="getDataFromServer"]
 
 [connection signal="body_entered" from="smallerRoom/wall/Door1/DoorPuzzle/InteractionArea" to="smallerRoom/wall/Door1/DoorPuzzle" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="smallerRoom/wall/Door1/DoorPuzzle/InteractionArea" to="smallerRoom/wall/Door1/DoorPuzzle" method="_on_interaction_area_body_exited"]

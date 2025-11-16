@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhf7krg486v83"
 path.s3tc="res://.godot/imported/floor_dirt_weeds_dungeon_texture.png-15d1357216a0a04c922fb3418b173f76.s3tc.ctex"
+path.etc2="res://.godot/imported/floor_dirt_weeds_dungeon_texture.png-15d1357216a0a04c922fb3418b173f76.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/building/floor_dirt_weeds/floor_dirt_weeds_dungeon_texture.png"
-dest_files=["res://.godot/imported/floor_dirt_weeds_dungeon_texture.png-15d1357216a0a04c922fb3418b173f76.s3tc.ctex"]
+dest_files=["res://.godot/imported/floor_dirt_weeds_dungeon_texture.png-15d1357216a0a04c922fb3418b173f76.s3tc.ctex", "res://.godot/imported/floor_dirt_weeds_dungeon_texture.png-15d1357216a0a04c922fb3418b173f76.etc2.ctex"]
 
 [params]
 
