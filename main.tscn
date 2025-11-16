@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=4 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=136 format=4 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -80,6 +80,8 @@
 [ext_resource type="PackedScene" uid="uid://06smwrteli6r" path="res://assets/building/floor_stone/floor_stone.tscn" id="75_wy5fy"]
 [ext_resource type="PackedScene" uid="uid://di2in3akjsy16" path="res://assets/building/wall_doorway/wall_doorway.tscn" id="76_gx4rg"]
 [ext_resource type="Script" uid="uid://dvhrk4vvcnwjs" path="res://get_data_from_server.gd" id="80_birbe"]
+[ext_resource type="AudioStream" uid="uid://cv4koinc075f2" path="res://musics/unlock.mp3" id="81_4obbf"]
+[ext_resource type="AudioStream" uid="uid://dbu0hp5l77ugk" path="res://musics/error.mp3" id="81_f1p13"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 transparency = 1
@@ -1817,9 +1819,16 @@ size_flags_vertical = 8
 script = ExtResource("14_w48qg")
 use_input_actions = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="wrongFeedback" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("81_f1p13")
+
+[node name="backgroundMusic" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("74_34ol3")
+volume_db = -4.0
 autoplay = true
+
+[node name="puzzleResolved" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("81_4obbf")
 
 [node name="getDataFromServer" type="Node" parent="."]
 script = ExtResource("80_birbe")

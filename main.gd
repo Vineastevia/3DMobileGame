@@ -53,30 +53,27 @@ func _on_jump_delta_changed(delta_value: float) -> void:
 
 func _on_keyring_picked_up() -> void:
 	keyObtained = true
+	$puzzleResolved.play()
 	doorLockedRoom2.unlock_with_keyrings()
 	
 func _on_lettre_lue(id):
 	var index = id - 1
 	if index >= 0 and index < boutons.size():
-		print("Lettre", id, "fermée — affichage du bouton correspondant")
 		boutons[index].visible = true
-	else:
-		print("Lettre non active, pas de bouton associé :", id)
 
 func _on_rune_activated(rune_name: String) -> void:
 	if door_unlocked:
 		return
 	
 	if rune_name == correct_rune:
+		$puzzleResolved.play()
 		doorLockedRoom1.open_door_from_puzzle()
 		door_unlocked = true
 	else:
-		print("Wrong rune:", rune_name)
 		give_wrong_feedback(rune_name)
 
 func give_wrong_feedback(_rune_name: String) -> void:
-	# Optional: shake camera, play sound, flash rune, etc.
-	print("That's not the right rune!")
+	$wrongFeedback.play()
 	
 func _on_jump_toggled(enabled: bool) -> void:
 	player._on_jump_toggled(enabled)

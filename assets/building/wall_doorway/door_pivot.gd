@@ -24,7 +24,6 @@ func open_door_from_puzzle() -> void:
 
 func unlock_with_keyrings() -> void:
 	has_keyrings = true
-	print("Door unlocked with keyrings!")
 		
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	animation_finished = true
