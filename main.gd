@@ -7,7 +7,11 @@ extends Node3D
 ]
 
 @onready var doorLockedRoom1: Node3D = $smallerRoom/wall/Door1/DoorPuzzle;
+@onready var doorLockedRoom2: Node3D = $bigRoom/walls/Door2/DoorPuzzle;
+@onready var keyrings: StaticBody3D = $bigRoom/decorations/keyring;
+
 @onready var player: CharacterBody3D = $Player
+
 @onready var switch_jump_button: StaticBody3D = $bigRoom/decorations/Switch
 @onready var jumping_button: TouchScreenButton = $CanvasLayer/jumpButton
 @onready var incr_jump_velocity: StaticBody3D = $bigRoom/decorations/increaseButton
@@ -33,6 +37,8 @@ func _ready():
 	incr_jump_velocity.value_changed.connect(_on_jump_delta_changed)
 	decr_jump_velocity.value_changed.connect(_on_jump_delta_changed)
 	
+	keyrings.keyring_picked_up.connect(_on_keyring_picked_up)
+	
 	jumping_button.visible = false
 	
 	label_jump_velocity.text = "%.1f" % player.jump_velocity
@@ -45,6 +51,10 @@ func _on_jump_delta_changed(delta_value: float) -> void:
 	)
 	label_jump_velocity.text = "%.1f" % player.jump_velocity
 
+func _on_keyring_picked_up() -> void:
+	keyObtained = true
+	doorLockedRoom2.unlock_with_keyrings()
+	
 func _on_lettre_lue(id):
 	var index = id - 1
 	if index >= 0 and index < boutons.size():

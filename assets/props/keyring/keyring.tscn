@@ -9,6 +9,7 @@
 radius = 0.6
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jvw8i"]
+height = 2.5
 
 [node name="keyring" type="StaticBody3D"]
 script = ExtResource("1_2ey02")
@@ -22,12 +23,16 @@ shape = SubResource("CylinderShape3D_2ey02")
 [node name="InteractAction" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractAction"]
-transform = Transform3D(1, 0, 0, 0, 0.10999996, 0, 0, 0, 1.1, 0, 0.1, 0)
+transform = Transform3D(1.4, 0, 0, 0, 0.89319974, 0, 0, 0, 1.32, 0, 0.1, 0)
 shape = SubResource("CylinderShape3D_ac4yr")
 debug_color = Color(0.95686275, 0.6, 0.69803923, 0.41960785)
+
+[node name="Label3D" type="Label3D" parent="InteractAction"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.4, 0)
+text = "Ramasser"
 
 [node name="InteractArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
-transform = Transform3D(2.42, 0, 0, 0, 0.19999999, 0, 0, 0, 2.3760002, 0, 0.1, 0)
+transform = Transform3D(9.379922, 0, 0, 0, 1.9320002, 0, 0, 0, 8.648641, 0, 0.58300006, 0)
 shape = SubResource("CylinderShape3D_jvw8i")

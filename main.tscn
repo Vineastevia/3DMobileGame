@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=4 uid="uid://c70pac7fj3pmj"]
+[gd_scene load_steps=128 format=4 uid="uid://c70pac7fj3pmj"]
 
 [ext_resource type="PackedScene" uid="uid://ddlmg8hxryo8y" path="res://assets/building/wall/wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://53d2pvcwh0jd" path="res://assets/building/wall_corner/wall_corner.tscn" id="1_7mycd"]
@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://bprxel0nas5vp" path="res://assets/props/chair/chair.tscn" id="65_1vm84"]
 [ext_resource type="PackedScene" uid="uid://cseyqrd1jrpd7" path="res://addons/custom_button/jumpButton/jump_button.tscn" id="65_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://bnn8okjyswfa" path="res://assets/props/candle_lit/candle_lit.tscn" id="66_wu3dr"]
+[ext_resource type="AudioStream" uid="uid://3jkegkklg73n" path="res://musics/sound_ambiance.mp3" id="74_34ol3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 transparency = 1
@@ -885,6 +886,7 @@ shape = SubResource("BoxShape3D_uatky")
 
 [node name="DoorPuzzle" type="Node3D" parent="bigRoom/walls/Door2"]
 script = ExtResource("8_gngh3")
+requires_keyrings = true
 
 [node name="ButtonAction" type="Area3D" parent="bigRoom/walls/Door2/DoorPuzzle"]
 transform = Transform3D(1.1000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.08, 1.9000001, 0)
@@ -1423,7 +1425,7 @@ libraries = {
 [node name="InteractionArea" type="Area3D" parent="bigRoom/decorations/decreaseButton"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bigRoom/decorations/decreaseButton/InteractionArea"]
-transform = Transform3D(2.5418644, 0, 0, 0, 3.947124, 0, 0, 0, 4.5631876, 0.97007895, 0, 0)
+transform = Transform3D(13.53308, 0, 1.7053026e-13, 0, 9.394278, 0, -1.9895197e-13, 0, 7.5478864, 0.9700775, 0, 0)
 shape = SubResource("BoxShape3D_jmddd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bigRoom/decorations/decreaseButton"]
@@ -1550,7 +1552,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4, 1.3000001, -11.5)
 
 [node name="keyring" parent="bigRoom/decorations" instance=ExtResource("64_rqtf5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.199999, 2.3, -11.400001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.050566, 2.3, -11.400001)
 
 [node name="chair" parent="bigRoom/decorations" instance=ExtResource("65_1vm84")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.9, 1.3000001, -4.6)
@@ -1637,6 +1639,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 script = ExtResource("14_w48qg")
 use_input_actions = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("74_34ol3")
+autoplay = true
 
 [connection signal="body_entered" from="smallerRoom/wall/Door1/DoorPuzzle/InteractionArea" to="smallerRoom/wall/Door1/DoorPuzzle" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="smallerRoom/wall/Door1/DoorPuzzle/InteractionArea" to="smallerRoom/wall/Door1/DoorPuzzle" method="_on_interaction_area_body_exited"]
